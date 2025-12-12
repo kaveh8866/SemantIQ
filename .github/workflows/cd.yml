@@ -21,7 +21,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build and push backend
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: backend/Dockerfile.prod
@@ -31,7 +31,7 @@ jobs:
             ghcr.io/semantiq/backend:${{ github.sha }}
 
       - name: Build and push frontend
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: frontend
           file: frontend/Dockerfile.prod
@@ -41,7 +41,7 @@ jobs:
             ghcr.io/semantiq/frontend:${{ github.sha }}
 
       - name: Build and push worker
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: worker/Dockerfile.prod

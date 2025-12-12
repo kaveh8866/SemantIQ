@@ -31,7 +31,7 @@ class UsageMeta(BaseModel):
 
 
 class ModelConfig(BaseModel):
-    provider: Literal["openai", "gemini", "grok"]
+    provider: Literal["openai", "gemini", "grok", "openrouter"]
     model_name: str
     parameters: ModelParameters | None = None
     api_key_env: str | None = None
@@ -55,4 +55,3 @@ class ModelAnswer(BaseModel):
     usage_meta: UsageMeta | None = None
     finish_reason: str | None = None
     timestamp: datetime
-

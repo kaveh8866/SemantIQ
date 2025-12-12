@@ -13,6 +13,7 @@ export function Sidebar() {
       </div>
       <nav className="flex flex-col gap-2">
         <Link className="rounded-md px-3 py-2 hover:bg-gray-800" href="/dashboard">Dashboard</Link>
+        <Link className="rounded-md px-3 py-2 hover:bg-gray-800" href="/run">Playground</Link>
         <Link className="rounded-md px-3 py-2 hover:bg-gray-800" href="/runs">Runs</Link>
         <Link className="rounded-md px-3 py-2 hover:bg-gray-800" href="/benchmarks">Benchmarks</Link>
         <Link className="rounded-md px-3 py-2 hover:bg-gray-800" href="/settings">Settings</Link>

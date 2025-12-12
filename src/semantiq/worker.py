@@ -6,13 +6,15 @@ from arq.connections import RedisSettings
 from semantiq.db.engine import get_session
 from semantiq.storage.storage import PostgresStorage
 from semantiq.benchmarks.loader import load_benchmarks
+from semantiq.schemas import BenchmarkDefinition
 from semantiq.runner.runner import BenchmarkRunner
 from semantiq.models.providers.openai_provider import OpenAIProvider
 from semantiq.models.providers.mock_providers import MockGeminiProvider
+from semantiq.models.providers.openrouter_provider import OpenRouterProvider
 from semantiq.config.loader import load_model_config_from_yaml
 
 
-async def run_benchmark_job(ctx, run_id: int, model_config: dict | None = None, provider_key: str | None = None, benchmarks_path: str | None = None, config_path: str | None = None) -> None:
+async def run_benchmark_job(ctx, run_id: int, model_config: dict | None = None, provider_key: str | None = None, benchmarks_path: str | None = None, config_path: str | None = None, benchmarks_data: list[dict] | None = None) -> None:
     storage = PostgresStorage()
     async for session in get_session():
         await storage.set_run_status(session, run_id, "running")
@@ -24,16 +26,26 @@ async def run_benchmark_job(ctx, run_id: int, model_config: dict | None = None, 
             mc.top_p = model_config.get("top_p")
             mc.max_tokens = model_config.get("max_tokens")
             mc.seed = model_config.get("seed")
-            mc.api_key = None
+            mc.api_key = model_config.get("api_key")
         else:
             mc = load_model_config_from_yaml(config_path or "config/config.yaml", provider_key or "gemini")
-        bms = load_benchmarks(benchmarks_path or "examples/benchmarks/example_benchmarks.json")
+        if benchmarks_data:
+            bms = []
+            for item in benchmarks_data:
+                try:
+                    bms.append(BenchmarkDefinition.model_validate(item))
+                except Exception:
+                    continue
+        else:
+            bms = load_benchmarks(benchmarks_path or "examples/benchmarks/example_benchmarks.json")
         pk = provider_key or (model_config.get("provider") if model_config else "gemini")
         if pk == "openai":
             provider = OpenAIProvider()
         elif pk == "grok":
             from semantiq.models.providers.grok_provider import GrokProvider
             provider = GrokProvider()
+        elif pk == "openrouter":
+            provider = OpenRouterProvider()
         else:
             provider = MockGeminiProvider()
         runner = BenchmarkRunner()

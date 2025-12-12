@@ -4,6 +4,7 @@ import os
 from typing import Any
 
 from fastapi import FastAPI, Depends, HTTPException, Header, Response
+from fastapi.middleware.cors import CORSMiddleware
 from sqlmodel.ext.asyncio.session import AsyncSession
 from sqlmodel import select
 
@@ -20,6 +21,14 @@ app = FastAPI()
 storage = PostgresStorage()
 API_KEY = os.getenv("SEMANTIQ_API_KEY", "dev-key")
 
+allowed_origins = os.getenv("SEMANTIQ_ALLOWED_ORIGINS", "http://localhost:3000").split(",")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[o.strip() for o in allowed_origins if o.strip()],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 async def require_api_key(x_api_key: str | None = Header(default=None)) -> None:
     if x_api_key != API_KEY:
@@ -78,6 +87,34 @@ async def create_study_api(payload: dict, session: AsyncSession = Depends(get_se
     cfg = StudyConfig.model_validate(payload)
     result = await create_study(session, cfg)
     return result
+
+
+@app.post("/playground/run", dependencies=[Depends(require_api_key)])
+async def playground_run(payload: dict, session: AsyncSession = Depends(get_session)) -> dict[str, Any]:
+    providers_models = payload.get("models") or []
+    benchmarks_data = payload.get("benchmarks_data")
+    benchmarks_path = payload.get("benchmarks_path")
+    if not providers_models:
+        raise HTTPException(status_code=400, detail="models required")
+    storage_local = PostgresStorage()
+    runs_created: list[int] = []
+    # create runs and enqueue jobs
+    from arq import create_pool
+    from arq.connections import RedisSettings
+    redis = await create_pool(RedisSettings.from_dsn(os.getenv("REDIS_URL", "redis://localhost:6379")))
+    for mc in providers_models:
+        run = await storage_local.create_run(session, model_config=mc)
+        await redis.enqueue_job(
+            "run_benchmark_job",
+            run.id,
+            mc,
+            mc.get("provider"),
+            benchmarks_path,
+            None,
+            benchmarks_data,
+        )
+        runs_created.append(run.id)
+    return {"runs": runs_created}
 
 
 @app.get("/studies/{study_id}/report", dependencies=[Depends(require_api_key)])

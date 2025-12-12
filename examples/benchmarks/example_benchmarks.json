@@ -1,0 +1,16 @@
+[
+  {
+    "id": "smf-001",
+    "module": "SMF",
+    "prompt_text": "Explain the concept of semantic similarity in one paragraph.",
+    "dimensions": ["clarity", "consistency"],
+    "meta": {"difficulty": "easy"}
+  },
+  {
+    "id": "hacs-101",
+    "module": "HACS",
+    "prompt_text": "Classify the following statement: 'All swans are white' in terms of cognitive bias.",
+    "dimensions": ["bias", "reasoning"],
+    "meta": {"category": "bias-detection"}
+  }
+]

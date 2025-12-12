@@ -1,0 +1,39 @@
+version: "3.9"
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: semantiq
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+  api:
+    build: .
+    command: ["uvicorn", "semantiq.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/semantiq
+      REDIS_URL: redis://redis:6379
+      SEMANTIQ_API_KEY: dev-key
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+      - redis
+  worker:
+    build: .
+    command: ["arq", "semantiq.worker.WorkerSettings"]
+    environment:
+      DATABASE_URL: postgresql+asyncpg://postgres:postgres@db:5432/semantiq
+      REDIS_URL: redis://redis:6379
+    depends_on:
+      - db
+      - redis
+volumes:
+  pg_data:

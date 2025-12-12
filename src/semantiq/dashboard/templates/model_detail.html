@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Run Details</h2>
+<p><strong>Run:</strong> {{ name }}</p>
+<p><strong>Model:</strong> {{ model }} | <strong>Provider:</strong> {{ provider }}</p>
+<p><strong>Answers:</strong> {{ answers_count }}</p>
+
+<h3>Average Scores</h3>
+<table>
+  <thead>
+    <tr><th>Criterion</th><th>Score</th></tr>
+  </thead>
+  <tbody>
+    {% for k, v in averages.items() %}
+    <tr><td>{{ k }}</td><td>{{ '%.3f'|format(v) }}</td></tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

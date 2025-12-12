@@ -1,0 +1,22 @@
+[storage]
+format = "jsonl"
+output_path = "out.jsonl"
+
+[[models]]
+provider = "openai"
+model_name = "gpt-4o-mini"
+api_key_env = "OPENAI_API_KEY"
+
+[[models]]
+provider = "gemini"
+model_name = "gemini-1.5-pro"
+api_key_env = "GOOGLE_API_KEY"
+
+[parameters]
+temperature = 0.2
+top_p = 0.9
+max_tokens = 512
+
+benchmarks = [
+  "examples/benchmarks/example_benchmarks.json"
+]

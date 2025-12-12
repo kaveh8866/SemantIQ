@@ -1,0 +1,18 @@
+- id: SMF-00
+  module: smf
+  prompt: "Explain the concept of semantic consistency in one paragraph."
+  dimensions:
+    - clarity
+    - consistency
+  meta:
+    difficulty: basic
+
+- id: SMF-01
+  module: meaning
+  prompt: "Define the concept of 'context stability' in your own words."
+  dimensions:
+    - clarity
+    - consistency
+    - depth
+  meta:
+    difficulty: basic

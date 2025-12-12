@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Model Runs</h2>
+<table>
+  <thead>
+    <tr><th>Run</th><th>Model</th><th>Provider</th><th>Answers</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+    {% for r in runs %}
+      <tr>
+        <td>{{ r.name }}</td>
+        <td>{{ r.model }}</td>
+        <td>{{ r.provider }}</td>
+        <td>{{ r.count }}</td>
+        <td><a href="/runs/{{ r.name }}">View details</a></td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

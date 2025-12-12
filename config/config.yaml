@@ -1,0 +1,16 @@
+models:
+  openai:
+    model_name: "gpt-4.1"
+    temperature: 0.2
+    max_tokens: 256
+    api_key: "${ENV.OPENAI_API_KEY}"
+  gemini:
+    model_name: "gemini-pro"
+    temperature: 0.3
+    max_tokens: 256
+  grok:
+    model_name: "grok-beta"
+    temperature: 0.3
+    max_tokens: 256
+    api_key: "${ENV.GROK_API_KEY}"
+    base_url: "https://api.x.ai/v1"

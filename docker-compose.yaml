@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  dashboard:
+    build: .
+    image: semantiq:0.1.0
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./outputs:/data
+    command: ["semantiq", "dashboard", "--answers-dir", "/data", "--evals-dir", "/data"]
+  human_rater:
+    build: .
+    image: semantiq:0.1.0
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./outputs:/data
+    command: ["python", "-c", "import uvicorn; from semantiq.human_rater.app import create_app; uvicorn.run(create_app('/data/run1.jsonl','/data/human_ratings.jsonl','/data/benchmarks.yaml'), host='0.0.0.0', port=8001)"]

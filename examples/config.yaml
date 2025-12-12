@@ -1,0 +1,6 @@
+models:
+  gemini:
+    model_name: "gemini-pro"
+    temperature: 0.2
+    max_tokens: 128
+    seed: 42

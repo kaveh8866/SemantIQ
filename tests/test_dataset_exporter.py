@@ -59,5 +59,5 @@ def test_exporter_writes_expected_files(tmp_path: Path):
 
     # Check model_answers line count is 1
     with (out_dir / "model_answers.jsonl").open("r", encoding="utf-8") as f:
-        lines = [l for l in f if l.strip()]
+        lines = [line for line in f if line.strip()]
     assert len(lines) == 1

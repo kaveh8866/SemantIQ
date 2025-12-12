@@ -4,14 +4,14 @@ from datetime import datetime
 from typing import Optional
 
 from sqlmodel import SQLModel, Field, Relationship
-from sqlalchemy import JSON
+from sqlalchemy import JSON, Column
 
 
 class BenchmarkDB(SQLModel, table=True):
     id: str = Field(primary_key=True)
     prompt: str
     module: str
-    dimensions: list[str] = Field(sa_column_kwargs={"type_": JSON})
+    dimensions: list[str] = Field(default_factory=list, sa_column=Column(JSON))
 
 class StudyDB(SQLModel, table=True):
     id: int | None = Field(default=None, primary_key=True)

@@ -8,6 +8,8 @@ from semantiq.evaluation.base import BaseEvaluator
 from semantiq.models.providers.base import BaseModelProvider
 from semantiq.schemas import BenchmarkDefinition, ModelAnswer, ModelConfig
 from semantiq.schemas.evaluation import EvaluationCriterion, EvaluationResult, EvaluationScore
+from semantiq.security.logging import get_logger, sanitize_user_generated_text
+logger = get_logger("semantiq.evaluator")
 
 
 def _default_criteria() -> list[str]:
@@ -86,5 +88,3 @@ def _parse_scores_payload(text: str) -> list[dict[str, Any]]:
     except Exception:
         pass
     return []
-from semantiq.security.logging import get_logger, sanitize_user_generated_text
-logger = get_logger("semantiq.evaluator")

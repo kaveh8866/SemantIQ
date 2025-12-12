@@ -3,7 +3,6 @@ from __future__ import annotations
 import glob
 import json
 import os
-from pathlib import Path
 
 import anyio
 from sqlmodel.ext.asyncio.session import AsyncSession

@@ -10,7 +10,6 @@ from semantiq.benchmarks.safety import check_prompt_safety
 from semantiq.config.loader import load_model_config_from_yaml
 from semantiq.models.providers.mock_providers import (
     MockGeminiProvider,
-    MockGrokProvider,
 )
 from semantiq.models.providers.openai_provider import OpenAIProvider
 from semantiq.runner.runner import BenchmarkRunner
@@ -20,6 +19,7 @@ from semantiq.storage.eval_jsonl import write_evaluations_jsonl
 from semantiq.evaluation.llm_evaluator import LLMEvaluator
 from semantiq.evaluation.pipeline import EvaluationPipeline
 from semantiq.export.dataset_exporter import DatasetExporter
+from semantiq.security.config_validation import validate_config
 
 
 app = typer.Typer()
@@ -27,7 +27,6 @@ app = typer.Typer()
 
 @app.command("run")
 def run_cmd(benchmarks: Path, provider: str, config: Path, output: Path, unsafe_allow: bool = typer.Option(False, "--unsafe-allow")) -> None:
-    logger = get_logger("semantiq.cli")
     bms = load_benchmarks(str(benchmarks))
     if not unsafe_allow:
         for b in bms:
@@ -53,10 +52,6 @@ def run_cmd(benchmarks: Path, provider: str, config: Path, output: Path, unsafe_
     write_jsonl(str(output), answers)
     typer.echo(f"Saving answers to {output}")
     typer.echo(f"Wrote {len(answers)} answers to {output}")
-
-
-if __name__ == "__main__":
-    app()
 
 
 @app.command("evaluate")
@@ -126,5 +121,31 @@ def export_dataset_cmd(
     out_dir_final = str(out_dir_opt or out_dir)
     exporter.export(out_dir_final, format=format)
     typer.echo(f"SemantIQ Open Dataset v0.1 exported to {out_dir_final}")
-from semantiq.security.config_validation import validate_config
-from semantiq.security.logging import get_logger
+
+
+@app.command("seed")
+def seed_cmd(path: Path = Path("src/semantiq/data/benchmarks"), force: bool = typer.Option(False, "--force")) -> None:
+    from semantiq.db.seed import seed_benchmarks_sync
+    count = seed_benchmarks_sync(str(path), force)
+    typer.echo(f"Seeded {count} benchmarks from {path}")
+
+
+@app.command("validate-data")
+def validate_data_cmd(path: Path = Path("src/semantiq/data/benchmarks")) -> None:
+    p = Path(path)
+    if not p.exists():
+        raise typer.BadParameter("Path not found")
+    ids: dict[str, str] = {}
+    dup: list[str] = []
+    files = [f for f in p.glob("*.yml")] + [f for f in p.glob("*.yaml")]
+    for f in files:
+        items = load_benchmarks(str(f))
+        for b in items:
+            if b.id in ids:
+                dup.append(b.id)
+            else:
+                ids[b.id] = f.name
+    if dup:
+        typer.echo(f"Duplicate IDs: {', '.join(sorted(set(dup)))}")
+        raise typer.Exit(code=1)
+    typer.echo("Benchmark YAML validated: no duplicate IDs")

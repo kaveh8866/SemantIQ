@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import os
 from pathlib import Path
 from typing import Any
 
@@ -104,4 +103,3 @@ def build_router(answers_dir: str, evals_dir: str) -> APIRouter:
         return templates.TemplateResponse("benchmark_detail.html", {"request": request, "rows": table})
 
     return router
-

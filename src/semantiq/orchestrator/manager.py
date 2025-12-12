@@ -8,7 +8,7 @@ from arq import create_pool
 from arq.connections import RedisSettings
 from sqlmodel.ext.asyncio.session import AsyncSession
 
-from semantiq.db.models import StudyDB, RunDB
+from semantiq.db.models import StudyDB
 from semantiq.storage.storage import PostgresStorage
 from semantiq.schemas.research import StudyConfig
 

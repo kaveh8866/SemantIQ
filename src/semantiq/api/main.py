@@ -3,12 +3,12 @@ from __future__ import annotations
 import os
 from typing import Any
 
-from fastapi import FastAPI, Depends, HTTPException, Header
+from fastapi import FastAPI, Depends, HTTPException, Header, Response
 from sqlmodel.ext.asyncio.session import AsyncSession
 from sqlmodel import select
 
 from semantiq.db.engine import get_session, init_db
-from semantiq.db.models import RunDB, BenchmarkDB, StudyDB, ReportDB
+from semantiq.db.models import RunDB, StudyDB, ReportDB, AnswerDB, EvaluationDB
 from semantiq.storage.storage import PostgresStorage
 from semantiq.schemas.research import StudyConfig
 from semantiq.orchestrator.manager import create_study
@@ -43,6 +43,22 @@ async def get_run(run_id: int, session: AsyncSession = Depends(get_session)) -> 
     if not run:
         raise HTTPException(status_code=404, detail="run not found")
     return {"run_id": run.id, "status": run.status, "created_at": run.created_at}
+
+@app.get("/runs", dependencies=[Depends(require_api_key)])
+async def list_runs(session: AsyncSession = Depends(get_session)) -> list[dict[str, Any]]:
+    res = await session.exec(select(RunDB))
+    items = list(res)
+    return [
+        {
+            "run_id": r.id,
+            "status": r.status,
+            "created_at": r.created_at,
+            "model_name": (r.model_config or {}).get("model_name"),
+            "provider": (r.model_config or {}).get("provider"),
+        }
+        for r in items
+        if r.id is not None
+    ]
 
 
 @app.get("/runs/{run_id}/results", dependencies=[Depends(require_api_key)])
@@ -85,8 +101,27 @@ async def get_study_report(study_id: int, format: str = "md", session: AsyncSess
     await session.commit()
     return {"report": md}
 
-
 @app.post("/schedules", dependencies=[Depends(require_api_key)])
 async def create_schedule(payload: dict) -> dict[str, Any]:
     # Stub acceptance; scheduling configured in worker via cron functions
     return {"status": "accepted", "payload": payload}
+
+@app.get("/runs/{run_id}/metrics", dependencies=[Depends(require_api_key)])
+async def get_run_metrics(run_id: int, session: AsyncSession = Depends(get_session)) -> dict[str, Any]:
+    res = await session.exec(select(AnswerDB).where(AnswerDB.run_id == run_id))
+    answers = list(res)
+    ids = [a.id for a in answers if a.id is not None]
+    if not ids:
+        return {"run_id": run_id, "averages": {}}
+    res2 = await session.exec(select(EvaluationDB).where(EvaluationDB.answer_id.in_(ids)))
+    evals = list(res2)
+    totals: dict[str, list[float]] = {}
+    for e in evals:
+        data = e.scores or {}
+        arr = data.get("scores") or []
+        for item in arr:
+            k = str(item.get("criterion"))
+            v = float(item.get("score", 0.0))
+            totals.setdefault(k, []).append(v)
+    averages = {k: (sum(v) / len(v) if v else 0.0) for k, v in totals.items()}
+    return {"run_id": run_id, "averages": averages}

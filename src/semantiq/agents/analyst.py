@@ -4,7 +4,7 @@ from typing import Any
 from sqlmodel.ext.asyncio.session import AsyncSession
 from sqlmodel import select
 
-from semantiq.db.models import StudyDB, RunDB, AnswerDB, EvaluationDB
+from semantiq.db.models import RunDB, AnswerDB, EvaluationDB
 from semantiq.models.providers.openai_provider import OpenAIProvider
 from semantiq.schemas import ModelConfig
 

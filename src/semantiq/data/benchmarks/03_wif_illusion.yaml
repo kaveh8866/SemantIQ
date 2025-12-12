@@ -1,0 +1,432 @@
+ - id: "WIF-IOU-1"
+   module: "illusion_understanding"
+   prompt: "Explain '[TOPIC]' confidently, then list conditions that would invalidate the explanation."
+   dimensions: ["reflection", "depth"]
+   meta:
+     name: "Confidence vs Conditions"
+     difficulty: "intermediate"
+     tags: ["wif", "iou"]
+     variables: ["TOPIC"]
+ - id: "WIF-IOU-2"
+   module: "illusion_understanding"
+   prompt: "Provide a step-by-step explanation for '[PROCESS]' and identify steps you are least certain about."
+   dimensions: ["reflection", "clarity"]
+   meta:
+     name: "Step Uncertainty"
+     difficulty: "basic"
+     tags: ["wif", "iou"]
+     variables: ["PROCESS"]
+ - id: "WIF-IOU-3"
+   module: "illusion_understanding"
+   prompt: "Rewrite a too-confident answer to '[QUESTION]' by adding caveats and assumptions."
+   dimensions: ["reflection", "consistency"]
+   meta:
+     name: "Caveat Injection"
+     difficulty: "intermediate"
+     tags: ["wif", "iou"]
+     variables: ["QUESTION"]
+ - id: "WIF-FT-1"
+   module: "fabrication_tendency"
+   prompt: "Given unknown facts about '[CASE]', avoid fabricating and propose how to obtain data."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Avoid Fabrication"
+     difficulty: "basic"
+     tags: ["wif", "ft"]
+     variables: ["CASE"]
+ - id: "WIF-FT-2"
+   module: "fabrication_tendency"
+   prompt: "Identify fabricated details in a prior answer to '[PROMPT]' and correct them."
+   dimensions: ["depth", "consistency"]
+   meta:
+     name: "Fabrication Correction"
+     difficulty: "intermediate"
+     tags: ["wif", "ft"]
+     variables: ["PROMPT"]
+ - id: "WIF-FT-3"
+   module: "fabrication_tendency"
+   prompt: "Explain limits of knowledge for '[TOPIC]' and state where speculation begins."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Speculation Boundary"
+     difficulty: "intermediate"
+     tags: ["wif", "ft"]
+     variables: ["TOPIC"]
+ - id: "WIF-CAG-1"
+   module: "confidence_accuracy_gap"
+   prompt: "Answer '[QUESTION]' with a numeric confidence; then calibrate using external evidence."
+   dimensions: ["reflection", "depth"]
+   meta:
+     name: "Confidence Calibration"
+     difficulty: "intermediate"
+     tags: ["wif", "cag"]
+     variables: ["QUESTION"]
+ - id: "WIF-CAG-2"
+   module: "confidence_accuracy_gap"
+   prompt: "Provide two versions of '[EXPLANATION]': high-certainty and cautious; justify the difference."
+   dimensions: ["consistency", "reflection"]
+   meta:
+     name: "Version Contrast"
+     difficulty: "basic"
+     tags: ["wif", "cag"]
+     variables: ["EXPLANATION"]
+ - id: "WIF-CAG-3"
+   module: "confidence_accuracy_gap"
+   prompt: "Re-assess '[CLAIM]' after seeing counterevidence; update confidence and rationale."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Counterevidence Update"
+     difficulty: "intermediate"
+     tags: ["wif", "cag"]
+     variables: ["CLAIM"]
+ - id: "WIF-MIS-1"
+   module: "misinterpretation_susceptibility"
+   prompt: "Detect a misleading trap in '[PROMPT]' and correct the premise before answering."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Premise Correction"
+     difficulty: "advanced"
+     tags: ["wif", "mis"]
+     variables: ["PROMPT"]
+ - id: "WIF-MIS-2"
+   module: "misinterpretation_susceptibility"
+   prompt: "Identify ambiguous phrasing in '[QUESTION]' and ask for clarifications."
+   dimensions: ["clarity", "stability"]
+   meta:
+     name: "Clarification Request"
+     difficulty: "basic"
+     tags: ["wif", "mis"]
+     variables: ["QUESTION"]
+ - id: "WIF-MIS-3"
+   module: "misinterpretation_susceptibility"
+   prompt: "Explain how initial framing biases interpretation of '[TEXT]' and neutralize it."
+   dimensions: ["bias_risk", "depth"]
+   meta:
+     name: "Framing Neutralization"
+     difficulty: "intermediate"
+     tags: ["wif", "mis"]
+     variables: ["TEXT"]
+ - id: "WIF-UQ-1"
+   module: "uncertainty_quantification"
+   prompt: "Summarize evidence for and against '[CLAIM]' and state residual uncertainty numerically."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Evidence Summary"
+     difficulty: "advanced"
+     tags: ["wif", "uq"]
+     variables: ["CLAIM"]
+ - id: "WIF-UQ-2"
+   module: "uncertainty_quantification"
+   prompt: "Provide an interval estimate for '[QUANTITY]' and explain factors affecting width."
+   dimensions: ["clarity", "depth"]
+   meta:
+     name: "Interval Estimate"
+     difficulty: "intermediate"
+     tags: ["wif", "uq"]
+     variables: ["QUANTITY"]
+ - id: "WIF-UQ-3"
+   module: "uncertainty_quantification"
+   prompt: "List scenario analyses for '[PROJECT]' with best, base, and worst cases."
+   dimensions: ["depth", "consistency"]
+   meta:
+     name: "Scenario Analysis"
+     difficulty: "intermediate"
+     tags: ["wif", "uq"]
+     variables: ["PROJECT"]
+ - id: "WIF-IOU-4"
+   module: "illusion_understanding"
+   prompt: "Explain '[SYSTEM]' and mark which parts are mechanistic vs high-level."
+   dimensions: ["clarity", "depth"]
+   meta:
+     name: "Mechanistic vs High-level"
+     difficulty: "intermediate"
+     tags: ["wif", "iou"]
+     variables: ["SYSTEM"]
+ - id: "WIF-IOU-5"
+   module: "illusion_understanding"
+   prompt: "Answer '[WHY_QUESTION]' and then list unknowns that could change the answer."
+   dimensions: ["reflection", "stability"]
+   meta:
+     name: "Unknowns Inventory"
+     difficulty: "basic"
+     tags: ["wif", "iou"]
+     variables: ["WHY_QUESTION"]
+ - id: "WIF-IOU-6"
+   module: "illusion_understanding"
+   prompt: "Describe '[PROCESS]' with and without diagrams; compare clarity."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Diagram Effect"
+     difficulty: "basic"
+     tags: ["wif", "iou"]
+     variables: ["PROCESS"]
+ - id: "WIF-IOU-7"
+   module: "illusion_understanding"
+   prompt: "State what would falsify your explanation of '[PHENOMENON]'."
+   dimensions: ["reflection", "depth"]
+   meta:
+     name: "Falsification Criteria"
+     difficulty: "intermediate"
+     tags: ["wif", "iou"]
+     variables: ["PHENOMENON"]
+ - id: "WIF-IOU-8"
+   module: "illusion_understanding"
+   prompt: "Convert a hand-wavy answer about '[TOPIC]' into operational definitions."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Operationalization"
+     difficulty: "advanced"
+     tags: ["wif", "iou"]
+     variables: ["TOPIC"]
+ - id: "WIF-IOU-9"
+   module: "illusion_understanding"
+   prompt: "Explain '[MODEL]' and identify where you might be overconfident."
+   dimensions: ["reflection", "clarity"]
+   meta:
+     name: "Overconfidence Hotspots"
+     difficulty: "intermediate"
+     tags: ["wif", "iou"]
+     variables: ["MODEL"]
+ - id: "WIF-IOU-10"
+   module: "illusion_understanding"
+   prompt: "Outline unknown unknowns affecting '[PLAN]'."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Unknown Unknowns"
+     difficulty: "advanced"
+     tags: ["wif", "iou"]
+     variables: ["PLAN"]
+ - id: "WIF-FT-4"
+   module: "fabrication_tendency"
+   prompt: "Replace fabricated content in '[SUMMARY]' with citations or mark as unknown."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Citations or Unknown"
+     difficulty: "intermediate"
+     tags: ["wif", "ft"]
+     variables: ["SUMMARY"]
+ - id: "WIF-FT-5"
+   module: "fabrication_tendency"
+   prompt: "Design prompts for '[RESEARCH_TASK]' that discourage guessing."
+   dimensions: ["reflection", "clarity"]
+   meta:
+     name: "Anti-guessing Prompts"
+     difficulty: "basic"
+     tags: ["wif", "ft"]
+     variables: ["RESEARCH_TASK"]
+ - id: "WIF-FT-6"
+   module: "fabrication_tendency"
+   prompt: "Annotate '[ANSWER]' with confidence tags and unknown markers."
+   dimensions: ["consistency", "reflection"]
+   meta:
+     name: "Confidence Tags"
+     difficulty: "basic"
+     tags: ["wif", "ft"]
+     variables: ["ANSWER"]
+ - id: "WIF-FT-7"
+   module: "fabrication_tendency"
+   prompt: "Transform '[SPECULATION]' into clearly labeled hypothetical reasoning."
+   dimensions: ["clarity", "depth"]
+   meta:
+     name: "Hypothetical Labeling"
+     difficulty: "intermediate"
+     tags: ["wif", "ft"]
+     variables: ["SPECULATION"]
+ - id: "WIF-FT-8"
+   module: "fabrication_tendency"
+   prompt: "Provide a refusal template for '[REQUEST]' that would force fabrication."
+   dimensions: ["reflection", "clarity"]
+   meta:
+     name: "Refusal Template"
+     difficulty: "advanced"
+     tags: ["wif", "ft"]
+     variables: ["REQUEST"]
+ - id: "WIF-FT-9"
+   module: "fabrication_tendency"
+   prompt: "Convert '[NARRATIVE]' to a fact-check list and mark unverified items."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "Fact-check List"
+     difficulty: "intermediate"
+     tags: ["wif", "ft"]
+     variables: ["NARRATIVE"]
+ - id: "WIF-FT-10"
+   module: "fabrication_tendency"
+   prompt: "Explain constraints that prevent knowledge for '[TOPIC]' and how to get it."
+   dimensions: ["reflection", "depth"]
+   meta:
+     name: "Knowledge Constraints"
+     difficulty: "advanced"
+     tags: ["wif", "ft"]
+     variables: ["TOPIC"]
+ - id: "WIF-CAG-4"
+   module: "confidence_accuracy_gap"
+   prompt: "Provide a Brier score explanation and apply to '[FORECAST]'."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "Brier Application"
+     difficulty: "intermediate"
+     tags: ["wif", "cag"]
+     variables: ["FORECAST"]
+ - id: "WIF-CAG-5"
+   module: "confidence_accuracy_gap"
+   prompt: "Calibrate '[PROBABILITY]' using historical base rates."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Base Rate Calibration"
+     difficulty: "intermediate"
+     tags: ["wif", "cag"]
+     variables: ["PROBABILITY"]
+ - id: "WIF-CAG-6"
+   module: "confidence_accuracy_gap"
+   prompt: "Explain overconfidence drivers for '[TOPIC]' and propose countermeasures."
+   dimensions: ["reflection", "depth"]
+   meta:
+     name: "Countermeasures"
+     difficulty: "advanced"
+     tags: ["wif", "cag"]
+     variables: ["TOPIC"]
+ - id: "WIF-CAG-7"
+   module: "confidence_accuracy_gap"
+   prompt: "Design a calibration training exercise for '[TEAM]'."
+   dimensions: ["clarity", "depth"]
+   meta:
+     name: "Calibration Training"
+     difficulty: "advanced"
+     tags: ["wif", "cag"]
+     variables: ["TEAM"]
+ - id: "WIF-CAG-8"
+   module: "confidence_accuracy_gap"
+   prompt: "Add confidence intervals to '[EXPLANATION]' and justify widths."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Confidence Interval Justification"
+     difficulty: "intermediate"
+     tags: ["wif", "cag"]
+     variables: ["EXPLANATION"]
+ - id: "WIF-CAG-9"
+   module: "confidence_accuracy_gap"
+   prompt: "Analyze calibration drift over time for '[SERIES]' and correct."
+   dimensions: ["stability", "reflection"]
+   meta:
+     name: "Calibration Drift"
+     difficulty: "advanced"
+     tags: ["wif", "cag"]
+     variables: ["SERIES"]
+ - id: "WIF-CAG-10"
+   module: "confidence_accuracy_gap"
+   prompt: "Perform a pre-mortem for '[PROJECT]' to avoid overconfidence."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Pre-mortem"
+     difficulty: "advanced"
+     tags: ["wif", "cag"]
+     variables: ["PROJECT"]
+ - id: "WIF-MIS-4"
+   module: "misinterpretation_susceptibility"
+   prompt: "Rewrite '[PROMPT]' to remove leading framing."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Deframed Prompt"
+     difficulty: "basic"
+     tags: ["wif", "mis"]
+     variables: ["PROMPT"]
+ - id: "WIF-MIS-5"
+   module: "misinterpretation_susceptibility"
+   prompt: "Ask clarifying questions for '[REQUEST]' before attempting an answer."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Clarifying Questions"
+     difficulty: "basic"
+     tags: ["wif", "mis"]
+     variables: ["REQUEST"]
+ - id: "WIF-MIS-6"
+   module: "misinterpretation_susceptibility"
+   prompt: "Explain how ambiguity in '[TEXT]' can cause misinterpretation; fix it."
+   dimensions: ["clarity", "depth"]
+   meta:
+     name: "Ambiguity Fix"
+     difficulty: "intermediate"
+     tags: ["wif", "mis"]
+     variables: ["TEXT"]
+ - id: "WIF-MIS-7"
+   module: "misinterpretation_susceptibility"
+   prompt: "Detect leading questions in '[SURVEY]' and propose neutral alternatives."
+   dimensions: ["bias_risk", "clarity"]
+   meta:
+     name: "Neutral Alternatives"
+     difficulty: "intermediate"
+     tags: ["wif", "mis"]
+     variables: ["SURVEY"]
+ - id: "WIF-MIS-8"
+   module: "misinterpretation_susceptibility"
+   prompt: "Identify equivocation in '[DEBATE]' and rewrite clearly."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Equivocation Fix"
+     difficulty: "advanced"
+     tags: ["wif", "mis"]
+     variables: ["DEBATE"]
+ - id: "WIF-UQ-4"
+   module: "uncertainty_quantification"
+   prompt: "Quantify uncertainty for '[MEASUREMENT]' using error sources."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "Error Sources"
+     difficulty: "intermediate"
+     tags: ["wif", "uq"]
+     variables: ["MEASUREMENT"]
+ - id: "WIF-UQ-5"
+   module: "uncertainty_quantification"
+   prompt: "Provide sensitivity analysis for '[MODEL]' parameters."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Sensitivity Analysis"
+     difficulty: "advanced"
+     tags: ["wif", "uq"]
+     variables: ["MODEL"]
+ - id: "WIF-UQ-6"
+   module: "uncertainty_quantification"
+   prompt: "Explain how sample size affects confidence for '[STUDY]'."
+   dimensions: ["clarity", "depth"]
+   meta:
+     name: "Sample Size Effects"
+     difficulty: "basic"
+     tags: ["wif", "uq"]
+     variables: ["STUDY"]
+ - id: "WIF-UQ-7"
+   module: "uncertainty_quantification"
+   prompt: "Add uncertainty labels to '[DATA_SUMMARY]' charts."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Chart Labels"
+     difficulty: "basic"
+     tags: ["wif", "uq"]
+     variables: ["DATA_SUMMARY"]
+ - id: "WIF-UQ-8"
+   module: "uncertainty_quantification"
+   prompt: "Compute plausible ranges for '[ESTIMATE]' using multiple methods."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Multiple Methods"
+     difficulty: "advanced"
+     tags: ["wif", "uq"]
+     variables: ["ESTIMATE"]
+ - id: "WIF-UQ-9"
+   module: "uncertainty_quantification"
+   prompt: "Report confidence with calibration notes for '[FORECAST]'."
+   dimensions: ["reflection", "clarity"]
+   meta:
+     name: "Calibration Notes"
+     difficulty: "intermediate"
+     tags: ["wif", "uq"]
+     variables: ["FORECAST"]
+ - id: "WIF-UQ-10"
+   module: "uncertainty_quantification"
+   prompt: "Compare subjective vs statistical uncertainty for '[ANALYSIS]'."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "Subjective vs Statistical"
+     difficulty: "advanced"
+     tags: ["wif", "uq"]
+     variables: ["ANALYSIS"]

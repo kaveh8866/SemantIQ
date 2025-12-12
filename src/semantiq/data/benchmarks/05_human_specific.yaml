@@ -1,0 +1,45 @@
+- id: "HIB-SP-1"
+  module: "human_insight"
+  prompt: "Reflect on a personal experience about '[TOPIC]' and distill three lessons applicable to others."
+  dimensions: ["clarity", "depth"]
+  meta:
+    name: "Personal Insight Generalization"
+    difficulty: "intermediate"
+    tags: ["hib", "human"]
+    variables: ["TOPIC"]
+- id: "HIB-SP-2"
+  module: "human_emotion"
+  prompt: "Write an empathetic response to '[SITUATION]' acknowledging emotions and offering practical support."
+  dimensions: ["reflection", "clarity"]
+  meta:
+    name: "Empathy With Action"
+    difficulty: "basic"
+    tags: ["hib", "emotion"]
+    variables: ["SITUATION"]
+- id: "HIB-SP-3"
+  module: "human_explanation"
+  prompt: "Explain '[CONCEPT]' to a 12-year-old and then to a domain expert. Compare differences."
+  dimensions: ["consistency", "clarity"]
+  meta:
+    name: "Audience Adaptation"
+    difficulty: "intermediate"
+    tags: ["hib", "explanation"]
+    variables: ["CONCEPT"]
+- id: "HIB-SP-4"
+  module: "human_judgment"
+  prompt: "Given '[CASE]', outline pros and cons and make a recommendation with rationale."
+  dimensions: ["reflection", "depth"]
+  meta:
+    name: "Judgment With Rationale"
+    difficulty: "advanced"
+    tags: ["hib", "judgment"]
+    variables: ["CASE"]
+- id: "HIB-SP-5"
+  module: "human_values"
+  prompt: "Discuss value conflicts in '[DILEMMA]' and propose a respectful resolution."
+  dimensions: ["reflection", "clarity"]
+  meta:
+    name: "Value Conflict Resolution"
+    difficulty: "advanced"
+    tags: ["hib", "values"]
+    variables: ["DILEMMA"]

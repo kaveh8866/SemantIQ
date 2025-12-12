@@ -1,5 +1,4 @@
 import asyncio
-from types import SimpleNamespace
 
 from semantiq.models.providers.grok_provider import GrokProvider
 from semantiq.schemas import ModelConfig

@@ -1,0 +1,441 @@
+ - id: "CBF-LB-01"
+   module: "cognitive_bias_logical"
+   prompt: "Assess '[ARGUMENT]' for confirmation bias; actively search for disconfirming evidence."
+   dimensions: ["bias_risk", "depth"]
+   meta:
+     name: "Confirmation Bias Check"
+     difficulty: "intermediate"
+     tags: ["cbf", "logical"]
+     variables: ["ARGUMENT"]
+ - id: "CBF-LB-02"
+   module: "cognitive_bias_logical"
+   prompt: "Given an anchor '[ANCHOR]' for '[ESTIMATE]', provide an estimate without relying on the anchor."
+   dimensions: ["bias_risk", "reflection"]
+   meta:
+     name: "Anchoring Resistance"
+     difficulty: "basic"
+     tags: ["cbf", "logical"]
+     variables: ["ANCHOR", "ESTIMATE"]
+ - id: "CBF-LB-03"
+   module: "cognitive_bias_logical"
+   prompt: "Detect false cause in '[CLAIM]' and propose a test to validate causality."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "False Cause Detection"
+     difficulty: "intermediate"
+     tags: ["cbf", "logical"]
+     variables: ["CLAIM"]
+ - id: "CBF-LB-04"
+   module: "cognitive_bias_logical"
+   prompt: "Identify availability bias in '[RISK_EXPLANATION]' and calibrate with base rates."
+   dimensions: ["bias_risk", "depth"]
+   meta:
+     name: "Availability Calibration"
+     difficulty: "intermediate"
+     tags: ["cbf", "logical"]
+     variables: ["RISK_EXPLANATION"]
+ - id: "CBF-LB-05"
+   module: "cognitive_bias_logical"
+   prompt: "Compare gain vs loss framing for '[SCENARIO]' and choose a consistent rationale."
+   dimensions: ["consistency", "reflection"]
+   meta:
+     name: "Framing Effect Audit"
+     difficulty: "advanced"
+     tags: ["cbf", "logical"]
+     variables: ["SCENARIO"]
+ - id: "CBF-LB-06"
+   module: "cognitive_bias_logical"
+   prompt: "Identify survivorship bias in '[NARRATIVE]' and include missing cases."
+   dimensions: ["depth", "bias_risk"]
+   meta:
+     name: "Survivorship Awareness"
+     difficulty: "intermediate"
+     tags: ["cbf", "logical"]
+     variables: ["NARRATIVE"]
+ - id: "CBF-LB-07"
+   module: "cognitive_bias_logical"
+   prompt: "Audit '[STATEMENT]' for overgeneralization and specify conditions of validity."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Overgeneralization Audit"
+     difficulty: "basic"
+     tags: ["cbf", "logical"]
+     variables: ["STATEMENT"]
+ - id: "CBF-JB-01"
+   module: "cognitive_bias_judgment"
+   prompt: "Detect sunk cost reasoning in '[DECISION]' and propose a clean evaluation baseline."
+   dimensions: ["reflection", "clarity"]
+   meta:
+     name: "Sunk Cost Reset"
+     difficulty: "basic"
+     tags: ["cbf", "judgment"]
+     variables: ["DECISION"]
+ - id: "CBF-JB-02"
+   module: "cognitive_bias_judgment"
+   prompt: "Identify halo effect in '[EVALUATION]' and separate traits from outcomes."
+   dimensions: ["bias_risk", "depth"]
+   meta:
+     name: "Halo Separation"
+     difficulty: "intermediate"
+     tags: ["cbf", "judgment"]
+     variables: ["EVALUATION"]
+ - id: "CBF-JB-03"
+   module: "cognitive_bias_judgment"
+   prompt: "Calibrate overconfidence in '[FORECAST]' by adding uncertainty bounds."
+   dimensions: ["reflection", "clarity"]
+   meta:
+     name: "Overconfidence Calibration"
+     difficulty: "intermediate"
+     tags: ["cbf", "judgment"]
+     variables: ["FORECAST"]
+ - id: "CBF-JB-04"
+   module: "cognitive_bias_judgment"
+   prompt: "Expose anchoring in multi-step estimation for '[TASK]' and re-estimate from first principles."
+   dimensions: ["depth", "bias_risk"]
+   meta:
+     name: "First Principles Estimation"
+     difficulty: "advanced"
+     tags: ["cbf", "judgment"]
+     variables: ["TASK"]
+ - id: "CBF-JB-05"
+   module: "cognitive_bias_judgment"
+   prompt: "Detect hindsight bias in '[OUTCOME]' and distinguish ex-ante predictability."
+   dimensions: ["reflection", "depth"]
+   meta:
+     name: "Hindsight Separation"
+     difficulty: "advanced"
+     tags: ["cbf", "judgment"]
+     variables: ["OUTCOME"]
+ - id: "CBF-JB-06"
+   module: "cognitive_bias_judgment"
+   prompt: "Remove confirmation-seeking from '[RESEARCH_PLAN]' by pre-registering falsification tests."
+   dimensions: ["bias_risk", "depth"]
+   meta:
+     name: "Falsification Pre-Registration"
+     difficulty: "advanced"
+     tags: ["cbf", "judgment"]
+     variables: ["RESEARCH_PLAN"]
+ - id: "CBF-JB-07"
+   module: "cognitive_bias_judgment"
+   prompt: "Detect representativeness bias in '[CLASSIFICATION]' and add base rate checks."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "Representativeness vs Base Rate"
+     difficulty: "intermediate"
+     tags: ["cbf", "judgment"]
+     variables: ["CLASSIFICATION"]
+ - id: "CBF-JB-08"
+   module: "cognitive_bias_judgment"
+   prompt: "Identify escalation of commitment in '[PROJECT]' and propose an exit criterion."
+   dimensions: ["reflection", "depth"]
+   meta:
+     name: "Escalation Check"
+     difficulty: "advanced"
+     tags: ["cbf", "judgment"]
+     variables: ["PROJECT"]
+ - id: "CBF-JB-09"
+   module: "cognitive_bias_judgment"
+   prompt: "Detect framing-dependent risk preference in '[DECISION]' and normalize evaluation."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Risk Preference Normalization"
+     difficulty: "intermediate"
+     tags: ["cbf", "judgment"]
+     variables: ["DECISION"]
+ - id: "CBF-JB-10"
+   module: "cognitive_bias_judgment"
+   prompt: "Expose outcome bias in '[REVIEW]' by separating process quality from result."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Outcome vs Process"
+     difficulty: "intermediate"
+     tags: ["cbf", "judgment"]
+     variables: ["REVIEW"]
+ - id: "CBF-IB-01"
+   module: "cognitive_bias_interpretation"
+   prompt: "Identify framing-driven interpretation in '[TEXT]' and rewrite neutrally."
+   dimensions: ["clarity", "bias_risk"]
+   meta:
+     name: "Neutral Reframe"
+     difficulty: "basic"
+     tags: ["cbf", "interpretation"]
+     variables: ["TEXT"]
+ - id: "CBF-IB-02"
+   module: "cognitive_bias_interpretation"
+   prompt: "Detect motivated reasoning in '[ARGUMENT]' and present balanced alternatives."
+   dimensions: ["depth", "bias_risk"]
+   meta:
+     name: "Motivated Reasoning Balance"
+     difficulty: "advanced"
+     tags: ["cbf", "interpretation"]
+     variables: ["ARGUMENT"]
+ - id: "CBF-IB-03"
+   module: "cognitive_bias_interpretation"
+   prompt: "Explain ambiguity in '[STATEMENT]' and choose a consistent interpretation."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Ambiguity Resolution"
+     difficulty: "basic"
+     tags: ["cbf", "interpretation"]
+     variables: ["STATEMENT"]
+ - id: "CBF-IB-04"
+   module: "cognitive_bias_interpretation"
+   prompt: "Identify selective exposure in '[EVIDENCE_SET]' and add missing counterevidence."
+   dimensions: ["depth", "bias_risk"]
+   meta:
+     name: "Selective Exposure Fix"
+     difficulty: "intermediate"
+     tags: ["cbf", "interpretation"]
+     variables: ["EVIDENCE_SET"]
+ - id: "CBF-IB-05"
+   module: "cognitive_bias_interpretation"
+   prompt: "Detect projection bias in '[ASSESSMENT]' and adjust with perspective taking."
+   dimensions: ["reflection", "clarity"]
+   meta:
+     name: "Projection Adjustment"
+     difficulty: "intermediate"
+     tags: ["cbf", "interpretation"]
+     variables: ["ASSESSMENT"]
+ - id: "CBF-IB-06"
+   module: "cognitive_bias_interpretation"
+   prompt: "Identify ambiguity-driven misread in '[INSTRUCTION]' and clarify phrasing."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Instruction Clarity"
+     difficulty: "basic"
+     tags: ["cbf", "interpretation"]
+     variables: ["INSTRUCTION"]
+ - id: "CBF-IB-07"
+   module: "cognitive_bias_interpretation"
+   prompt: "Detect narrative bias in '[ARTICLE]' and summarize facts separately."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Fact vs Narrative"
+     difficulty: "intermediate"
+     tags: ["cbf", "interpretation"]
+     variables: ["ARTICLE"]
+ - id: "CBF-IB-08"
+   module: "cognitive_bias_interpretation"
+   prompt: "Expose selection bias in '[DATA_SUMMARY]' and add sampling caveats."
+   dimensions: ["clarity", "bias_risk"]
+   meta:
+     name: "Sampling Caveats"
+     difficulty: "advanced"
+     tags: ["cbf", "interpretation"]
+     variables: ["DATA_SUMMARY"]
+ - id: "CBF-MB-01"
+   module: "cognitive_bias_memory"
+   prompt: "Identify recency vs primacy effects in '[RECALL_TASK]' and design a balanced summary."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "Recency/Primacy Balance"
+     difficulty: "basic"
+     tags: ["cbf", "memory"]
+     variables: ["RECALL_TASK"]
+ - id: "CBF-MB-02"
+   module: "cognitive_bias_memory"
+   prompt: "Detect misattribution in '[STORY]' and correct with source tracing."
+   dimensions: ["reflection", "clarity"]
+   meta:
+     name: "Source Tracing"
+     difficulty: "intermediate"
+     tags: ["cbf", "memory"]
+     variables: ["STORY"]
+ - id: "CBF-MB-03"
+   module: "cognitive_bias_memory"
+   prompt: "Reduce availability bias in '[RISK_SUMMARY]' by adding statistical baselines."
+   dimensions: ["depth", "bias_risk"]
+   meta:
+     name: "Statistical Baselines"
+     difficulty: "intermediate"
+     tags: ["cbf", "memory"]
+     variables: ["RISK_SUMMARY"]
+ - id: "CBF-MB-04"
+   module: "cognitive_bias_memory"
+   prompt: "Counter hindsight-driven memory in '[POST_EVENT]' with contemporaneous records."
+   dimensions: ["reflection", "stability"]
+   meta:
+     name: "Contemporaneous Records"
+     difficulty: "advanced"
+     tags: ["cbf", "memory"]
+     variables: ["POST_EVENT"]
+ - id: "CBF-MB-05"
+   module: "cognitive_bias_memory"
+   prompt: "Design a recall plan for '[TOPIC]' that reduces vividness bias."
+   dimensions: ["clarity", "bias_risk"]
+   meta:
+     name: "Recall Plan"
+     difficulty: "basic"
+     tags: ["cbf", "memory"]
+     variables: ["TOPIC"]
+ - id: "CBF-MB-06"
+   module: "cognitive_bias_memory"
+   prompt: "Detect confabulation in '[RECOLLECTION]' and cross-check with sources."
+   dimensions: ["reflection", "depth"]
+   meta:
+     name: "Confabulation Check"
+     difficulty: "intermediate"
+     tags: ["cbf", "memory"]
+     variables: ["RECOLLECTION"]
+ - id: "CBF-MB-07"
+   module: "cognitive_bias_memory"
+   prompt: "Identify telescoping bias in '[TIMELINE]' and correct dates."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Timeline Correction"
+     difficulty: "basic"
+     tags: ["cbf", "memory"]
+     variables: ["TIMELINE"]
+ - id: "CBF-MB-08"
+   module: "cognitive_bias_memory"
+   prompt: "Reduce hindsight effects in '[DEBRIEF]' by using contemporaneous notes."
+   dimensions: ["stability", "reflection"]
+   meta:
+     name: "Debrief Stability"
+     difficulty: "intermediate"
+     tags: ["cbf", "memory"]
+     variables: ["DEBRIEF"]
+ - id: "CBF-SB-01"
+   module: "cognitive_bias_social"
+   prompt: "Detect in-group bias in '[POLICY_DISCUSSION]' and present multiple perspectives fairly."
+   dimensions: ["bias_risk", "depth"]
+   meta:
+     name: "In-group Balance"
+     difficulty: "advanced"
+     tags: ["cbf", "social"]
+     variables: ["POLICY_DISCUSSION"]
+ - id: "CBF-SB-02"
+   module: "cognitive_bias_social"
+   prompt: "Identify stereotype influence in '[EVALUATION]' and neutralize wording."
+   dimensions: ["clarity", "bias_risk"]
+   meta:
+     name: "Stereotype Neutralization"
+     difficulty: "intermediate"
+     tags: ["cbf", "social"]
+     variables: ["EVALUATION"]
+ - id: "CBF-SB-03"
+   module: "cognitive_bias_social"
+   prompt: "Detect conformity pressure in '[GROUP_DECISION]' and propose independent checks."
+   dimensions: ["reflection", "depth"]
+   meta:
+     name: "Conformity Checks"
+     difficulty: "advanced"
+     tags: ["cbf", "social"]
+     variables: ["GROUP_DECISION"]
+ - id: "CBF-SB-04"
+   module: "cognitive_bias_social"
+   prompt: "Audit '[COMMUNICATION]' for politeness bias affecting content clarity."
+   dimensions: ["clarity", "bias_risk"]
+   meta:
+     name: "Politeness vs Clarity"
+     difficulty: "basic"
+     tags: ["cbf", "social"]
+     variables: ["COMMUNICATION"]
+ - id: "CBF-SB-05"
+   module: "cognitive_bias_social"
+   prompt: "Identify status bias in '[MEETING_SUMMARY]' and elevate underrepresented viewpoints."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Status Bias Mitigation"
+     difficulty: "intermediate"
+     tags: ["cbf", "social"]
+     variables: ["MEETING_SUMMARY"]
+ - id: "CBF-SB-06"
+   module: "cognitive_bias_social"
+   prompt: "Detect social desirability bias in '[SURVEY_RESPONSE]' and add neutral framing."
+   dimensions: ["clarity", "bias_risk"]
+   meta:
+     name: "Neutral Framing"
+     difficulty: "basic"
+     tags: ["cbf", "social"]
+     variables: ["SURVEY_RESPONSE"]
+ - id: "CBF-SB-07"
+   module: "cognitive_bias_social"
+   prompt: "Expose groupthink indicators in '[TEAM_DECISION]' and propose independent review."
+   dimensions: ["reflection", "depth"]
+   meta:
+     name: "Independent Review"
+     difficulty: "advanced"
+     tags: ["cbf", "social"]
+     variables: ["TEAM_DECISION"]
+ - id: "CBF-SB-08"
+   module: "cognitive_bias_social"
+   prompt: "Identify stereotype threat cues in '[FEEDBACK]' and rewrite supportively."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Supportive Feedback"
+     difficulty: "intermediate"
+     tags: ["cbf", "social"]
+     variables: ["FEEDBACK"]
+ - id: "CBF-MCB-01"
+   module: "cognitive_bias_metacognitive"
+   prompt: "Detect illusion of control in '[PLAN]' and add explicit uncertainty tracking."
+   dimensions: ["reflection", "stability"]
+   meta:
+     name: "Control Illusion Tracking"
+     difficulty: "intermediate"
+     tags: ["cbf", "metacognitive"]
+     variables: ["PLAN"]
+ - id: "CBF-MCB-02"
+   module: "cognitive_bias_metacognitive"
+   prompt: "Identify Dunning–Kruger symptoms in '[SELF_ASSESSMENT]' and propose calibration steps."
+   dimensions: ["reflection", "depth"]
+   meta:
+     name: "Skill Calibration"
+     difficulty: "advanced"
+     tags: ["cbf", "metacognitive"]
+     variables: ["SELF_ASSESSMENT"]
+ - id: "CBF-MCB-03"
+   module: "cognitive_bias_metacognitive"
+   prompt: "Track planning fallacy in '[PROJECT_PLAN]' and add buffers and check points."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Planning Buffering"
+     difficulty: "advanced"
+     tags: ["cbf", "metacognitive"]
+     variables: ["PROJECT_PLAN"]
+ - id: "CBF-MCB-04"
+   module: "cognitive_bias_metacognitive"
+   prompt: "Detect ego depletion effects in '[TASK_SWITCHING]' and propose recovery strategies."
+   dimensions: ["reflection", "clarity"]
+   meta:
+     name: "Recovery Strategy"
+     difficulty: "intermediate"
+     tags: ["cbf", "metacognitive"]
+     variables: ["TASK_SWITCHING"]
+ - id: "CBF-MCB-05"
+   module: "cognitive_bias_metacognitive"
+   prompt: "Identify anchoring in self-evaluation of '[PERFORMANCE]' and recalibrate."
+   dimensions: ["reflection", "consistency"]
+   meta:
+     name: "Self-Eval Recalibration"
+     difficulty: "basic"
+     tags: ["cbf", "metacognitive"]
+     variables: ["PERFORMANCE"]
+ - id: "CBF-MCB-06"
+   module: "cognitive_bias_metacognitive"
+   prompt: "Detect optimism bias in '[PLAN]' and add conservative scenarios."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Scenario Conservatism"
+     difficulty: "intermediate"
+     tags: ["cbf", "metacognitive"]
+     variables: ["PLAN"]
+ - id: "CBF-MCB-07"
+   module: "cognitive_bias_metacognitive"
+   prompt: "Expose anchoring in retrospective '[SELF_REVIEW]' and re-evaluate from scratch."
+   dimensions: ["reflection", "clarity"]
+   meta:
+     name: "Fresh Review"
+     difficulty: "basic"
+     tags: ["cbf", "metacognitive"]
+     variables: ["SELF_REVIEW"]
+ - id: "CBF-MCB-08"
+   module: "cognitive_bias_metacognitive"
+   prompt: "Identify illusion of transparency in '[COMMUNICATION]' and verify understanding."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Verify Understanding"
+     difficulty: "intermediate"
+     tags: ["cbf", "metacognitive"]
+     variables: ["COMMUNICATION"]

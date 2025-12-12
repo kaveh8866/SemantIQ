@@ -1,9 +1,6 @@
 from __future__ import annotations
 
 import os
-from typing import Any
-
-from arq import create_pool
 from arq.connections import RedisSettings
 
 from semantiq.db.engine import get_session
@@ -11,7 +8,7 @@ from semantiq.storage.storage import PostgresStorage
 from semantiq.benchmarks.loader import load_benchmarks
 from semantiq.runner.runner import BenchmarkRunner
 from semantiq.models.providers.openai_provider import OpenAIProvider
-from semantiq.models.providers.mock_providers import MockGeminiProvider, MockGrokProvider
+from semantiq.models.providers.mock_providers import MockGeminiProvider
 from semantiq.config.loader import load_model_config_from_yaml
 
 

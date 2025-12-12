@@ -1,0 +1,180 @@
+ - id: "HIB-1"
+   module: "human_interface_insight"
+   prompt: "Reflect on a personal experience about '[TOPIC]' and distill three lessons applicable to others."
+   dimensions: ["clarity", "depth"]
+   meta:
+     name: "Personal Insight Generalization"
+     difficulty: "intermediate"
+     tags: ["hib", "human"]
+     variables: ["TOPIC"]
+ - id: "HIB-2"
+   module: "human_interface_emotion"
+   prompt: "Write an empathetic response to '[SITUATION]' acknowledging emotions and offering practical support."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Empathy With Action"
+     difficulty: "basic"
+     tags: ["hib", "emotion"]
+     variables: ["SITUATION"]
+ - id: "HIB-3"
+   module: "human_interface_explanation"
+   prompt: "Explain '[CONCEPT]' to a child and then to a domain expert; compare differences."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Audience Adaptation"
+     difficulty: "intermediate"
+     tags: ["hib", "explanation"]
+     variables: ["CONCEPT"]
+ - id: "HIB-4"
+   module: "human_interface_judgment"
+   prompt: "Given '[CASE]', outline pros and cons and make a recommendation with rationale."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "Judgment With Rationale"
+     difficulty: "advanced"
+     tags: ["hib", "judgment"]
+     variables: ["CASE"]
+ - id: "HIB-5"
+   module: "human_interface_values"
+   prompt: "Discuss value conflicts in '[DILEMMA]' and propose a respectful resolution."
+   dimensions: ["depth", "reflection"]
+   meta:
+     name: "Value Conflict Resolution"
+     difficulty: "advanced"
+     tags: ["hib", "values"]
+     variables: ["DILEMMA"]
+ - id: "HIB-6"
+   module: "human_interface_clarity"
+   prompt: "Rewrite '[MESSAGE]' to be clear, kind, and action-oriented."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Clear Kind Messaging"
+     difficulty: "basic"
+     tags: ["hib", "communication"]
+     variables: ["MESSAGE"]
+ - id: "HIB-7"
+   module: "human_interface_support"
+   prompt: "Design a support plan for '[SITUATION]' with immediate and follow-up steps."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "Support Planning"
+     difficulty: "intermediate"
+     tags: ["hib", "support"]
+     variables: ["SITUATION"]
+ - id: "HIB-8"
+   module: "human_interface_motivation"
+   prompt: "Write a motivating message for '[GOAL]' addressing common blockers."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Motivation Message"
+     difficulty: "basic"
+     tags: ["hib", "motivation"]
+     variables: ["GOAL"]
+ - id: "HIB-9"
+   module: "human_interface_mediation"
+   prompt: "Mediate a conflict about '[ISSUE]' and propose fair next steps."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "Conflict Mediation"
+     difficulty: "advanced"
+     tags: ["hib", "mediation"]
+     variables: ["ISSUE"]
+ - id: "HIB-10"
+   module: "human_interface_coaching"
+   prompt: "Coach someone struggling with '[TASK]' using step-by-step guidance."
+   dimensions: ["clarity", "stability"]
+   meta:
+     name: "Coaching Steps"
+     difficulty: "intermediate"
+     tags: ["hib", "coaching"]
+     variables: ["TASK"]
+ - id: "HIB-11"
+   module: "human_interface_listening"
+   prompt: "Summarize '[STORY]' reflecting back emotions and key points."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Active Listening"
+     difficulty: "basic"
+     tags: ["hib", "listening"]
+     variables: ["STORY"]
+ - id: "HIB-12"
+   module: "human_interface_advice"
+   prompt: "Provide pragmatic advice for '[PROBLEM]' with options and trade-offs."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "Pragmatic Advice"
+     difficulty: "intermediate"
+     tags: ["hib", "advice"]
+     variables: ["PROBLEM"]
+ - id: "HIB-13"
+   module: "human_interface_reassurance"
+   prompt: "Write a reassuring note for '[CONCERN]' while staying honest."
+   dimensions: ["clarity", "stability"]
+   meta:
+     name: "Honest Reassurance"
+     difficulty: "basic"
+     tags: ["hib", "reassurance"]
+     variables: ["CONCERN"]
+ - id: "HIB-14"
+   module: "human_interface_teachback"
+   prompt: "Teach '[CONCEPT]' and then ask for a teach-back; craft corrective feedback."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Teach-back"
+     difficulty: "intermediate"
+     tags: ["hib", "teaching"]
+     variables: ["CONCEPT"]
+ - id: "HIB-15"
+   module: "human_interface_boundaries"
+   prompt: "Write a respectful boundary message for '[REQUEST]' that you cannot fulfill."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Respectful Boundaries"
+     difficulty: "basic"
+     tags: ["hib", "boundaries"]
+     variables: ["REQUEST"]
+ - id: "HIB-16"
+   module: "human_interface_expertise"
+   prompt: "Explain limits of competence for '[TOPIC]' and refer to reliable sources."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Competence Limits"
+     difficulty: "intermediate"
+     tags: ["hib", "expertise"]
+     variables: ["TOPIC"]
+ - id: "HIB-17"
+   module: "human_interface_recovery"
+   prompt: "Draft a recovery plan after '[MISTAKE]' including apology and corrective steps."
+   dimensions: ["depth", "clarity"]
+   meta:
+     name: "Recovery Plan"
+     difficulty: "advanced"
+     tags: ["hib", "recovery"]
+     variables: ["MISTAKE"]
+ - id: "HIB-18"
+   module: "human_interface_gratitude"
+   prompt: "Write a gratitude note for '[HELP]' acknowledging specifics."
+   dimensions: ["clarity", "consistency"]
+   meta:
+     name: "Gratitude Specifics"
+     difficulty: "basic"
+     tags: ["hib", "gratitude"]
+     variables: ["HELP"]
+ - id: "HIB-19"
+   module: "human_interface_onboarding"
+   prompt: "Create onboarding instructions for '[ROLE]' with first-week checklist."
+   dimensions: ["clarity", "depth"]
+   meta:
+     name: "Onboarding Guide"
+     difficulty: "intermediate"
+     tags: ["hib", "onboarding"]
+     variables: ["ROLE"]
+ - id: "HIB-20"
+   module: "human_interface_feedback"
+   prompt: "Provide constructive feedback on '[WORK]' using SBI (Situation-Behavior-Impact)."
+   dimensions: ["clarity", "reflection"]
+   meta:
+     name: "Constructive Feedback"
+     difficulty: "intermediate"
+     tags: ["hib", "feedback"]
+     variables: ["WORK"]

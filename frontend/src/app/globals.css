@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0b0f1a;
+  --foreground: #e5e7eb;
+  --electric: #2F8EFF;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+.container {
+  @apply mx-auto w-full max-w-7xl px-4;
+}

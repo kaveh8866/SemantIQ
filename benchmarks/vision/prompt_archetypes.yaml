@@ -1,0 +1,142 @@
+vision_archetypes_version: "0.1"
+archetypes:
+  - archetype_id: soi
+    name: Single-Object Isolation
+    description: >
+      One object, minimal scene, no distractions. Tests the model's fundamental ability to generate a specific entity.
+    primary_categories: [single_object_fidelity]
+    primary_rubrics:
+      - object_presence
+      - attribute_fidelity
+      - semantic_coherence
+    expected_output_properties:
+      - exactly one main object
+      - no additional objects
+      - clear background or minimal context
+    allowed_variations:
+      - object class (common vs. rare)
+      - viewpoint (front, side, top)
+      - lighting (neutral, studio)
+    disallowed_patterns:
+      - complex backgrounds
+      - interaction with other objects
+      - artistic stylization
+    typical_failure_modes:
+      - object hallucination (extra objects)
+      - missing core attributes
+      - messy composition
+
+  - archetype_id: moc
+    name: Multi-Object Composition
+    description: >
+      Multiple objects with explicit co-presence requirements. Tests the model's ability to handle scene complexity.
+    primary_categories: [multi_object_composition]
+    primary_rubrics:
+      - object_count_accuracy
+      - object_distinctness
+      - scene_coherence
+    expected_output_properties:
+      - all requested objects present
+      - no bleeding of attributes between objects
+      - logical sizing
+    allowed_variations:
+      - object combinations (natural vs. surreal)
+      - number of distinct object types (2-4)
+    disallowed_patterns:
+      - ambiguous object overlaps
+      - extreme clutter
+    typical_failure_modes:
+      - missing objects
+      - object fusion (hybrid creatures)
+      - attribute leakage
+
+  - archetype_id: sra
+    name: Spatial Relation Assertion
+    description: >
+      Explicit spatial or relational constraints between objects (e.g., "on top of", "left of").
+    primary_categories: [spatial_relations]
+    primary_rubrics:
+      - positional_accuracy
+      - relative_orientation
+      - depth_layering
+    expected_output_properties:
+      - correct relative positioning
+      - correct depth ordering
+      - no intersection violations
+    allowed_variations:
+      - 2D relations (left/right)
+      - 3D relations (behind/in front)
+      - containment (inside/outside)
+    disallowed_patterns:
+      - ambiguous perspective
+      - optical illusions
+    typical_failure_modes:
+      - relation reversal (left/right swap)
+      - object merging
+      - floating objects
+
+  - archetype_id: abc
+    name: Attribute Binding & Counting
+    description: >
+      Quantities and attributes must be bound to correct instances (e.g., "three red balls and two blue cubes").
+    primary_categories: [attribute_binding_counting]
+    primary_rubrics:
+      - count_accuracy
+      - attribute_binding_precision
+      - leakage_resistance
+    expected_output_properties:
+      - exact counts for each object type
+      - attributes (color, texture) bound only to target
+    allowed_variations:
+      - low counts (1-5)
+      - attribute types (color, material, size)
+    disallowed_patterns:
+      - large crowds (>10)
+      - implied attributes
+    typical_failure_modes:
+      - count errors
+      - color bleeding (blue ball, red cube -> purple objects)
+
+  - archetype_id: nec
+    name: Negation & Exclusion Constraint
+    description: >
+      Explicitly forbids objects, attributes, or elements (e.g., "an empty room", "no people").
+    primary_categories: [negation_exclusion]
+    primary_rubrics:
+      - exclusion_adherence
+      - negative_constraint_fidelity
+      - replacement_logic
+    expected_output_properties:
+      - absence of forbidden elements
+      - logical replacement (empty room has walls/floor, not void)
+    allowed_variations:
+      - negative prompts syntax vs. natural language negation
+      - explicit removal vs. implicit absence
+    disallowed_patterns:
+      - double negatives
+      - paradoxical requests
+    typical_failure_modes:
+      - ironic presence (drawing the forbidden object)
+      - blank images
+
+  - archetype_id: sas
+    name: Style Anchoring & Stability
+    description: >
+      Explicit style requirement with minimal semantic content to test style adherence.
+    primary_categories: [style_stability]
+    primary_rubrics:
+      - style_adherence
+      - subject_consistency
+      - medium_fidelity
+    expected_output_properties:
+      - consistent artistic medium (e.g., pencil sketch)
+      - no photo-realism if stylized
+    allowed_variations:
+      - medium (sketch, oil, 3d render)
+      - artistic era (baroque, synthwave)
+    disallowed_patterns:
+      - artist names (Greg Rutkowski, etc.)
+      - trademarked styles
+    typical_failure_modes:
+      - reversion to photo-realism
+      - style mixing

@@ -1,0 +1,78 @@
+questions:
+  - question_id: ncb_q_001
+    category_id: ncb
+    archetype_id: ncb-01-subtle-distinction
+    benchmark_type: qbe
+    prompt_intent: Distinguish between envy and jealousy.
+    input: >
+      Explain the precise semantic difference between "envy" and "jealousy".
+    constraints:
+      - Must distinguish "wanting what others have" vs "fear of losing what you have".
+    expected_response_characteristics:
+      - Clear differentiation based on possession vs desire.
+    difficulty: medium
+    language: en
+    version: "1.0"
+
+  - question_id: ncb_q_002
+    category_id: ncb
+    archetype_id: ncb-02-tonal-shift
+    benchmark_type: ce
+    prompt_intent: Shift tone from direct to diplomatic.
+    input: >
+      Rewrite this email to be more diplomatic: "Your code is broken and caused the crash. Fix it now."
+    constraints:
+      - Must retain the message (code caused crash, needs fix).
+      - Must remove aggression.
+    expected_response_characteristics:
+      - Professional, constructive, non-blaming tone.
+    difficulty: low
+    language: en
+    version: "1.0"
+
+  - question_id: ncb_q_003
+    category_id: ncb
+    archetype_id: ncb-03-implication-extraction
+    benchmark_type: qbe
+    prompt_intent: Extract subtext from a passive-aggressive note.
+    input: >
+      "Per my last email, the attachment is included here for your convenience."
+      What is the sender likely feeling?
+    constraints:
+      - Identify frustration/annoyance.
+    expected_response_characteristics:
+      - Recognition of the "per my last email" trope as irritation.
+    difficulty: medium
+    language: en
+    version: "1.0"
+
+  - question_id: ncb_q_004
+    category_id: ncb
+    archetype_id: ncb-01-subtle-distinction
+    benchmark_type: qbe
+    prompt_intent: Distinguish between "classic" and "classical".
+    input: >
+      What is the difference between a "classic car" and "classical music" in terms of the suffix meaning?
+    constraints:
+      - Explain distinct usages.
+    expected_response_characteristics:
+      - Classic: High quality, typical example.
+      - Classical: Relating to a specific tradition/era.
+    difficulty: high
+    language: en
+    version: "1.0"
+
+  - question_id: ncb_q_005
+    category_id: ncb
+    archetype_id: ncb-02-tonal-shift
+    benchmark_type: ce
+    prompt_intent: Shift tone from excited to cautious.
+    input: >
+      Rewrite: "Our results are amazing! We solved it!" to be suitable for a scientific paper submission.
+    constraints:
+      - Use hedging (suggests, indicates).
+    expected_response_characteristics:
+      - "The results suggest a potential solution..."
+    difficulty: medium
+    language: en
+    version: "1.0"

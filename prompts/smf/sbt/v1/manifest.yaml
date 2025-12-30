@@ -1,0 +1,8 @@
+template_id: sbt-v1-stress
+benchmark_type: sbt
+version: "1.0"
+intended_categories: ["elb", "mlrb"]
+required_question_fields: ["input"]
+forbidden_content: ["difficulty_level", "expected_answer", "scoring_criteria"]
+rendering_notes: "Used for boundary testing."
+safety_notes: "Inputs may be adversarial. Do not execute harmful instructions."

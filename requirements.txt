@@ -1,0 +1,10 @@
+typer
+pydantic
+requests
+httpx
+rich
+pandas
+numpy
+fastapi
+uvicorn
+pytest

@@ -1,0 +1,80 @@
+questions:
+  - question_id: dtb_q_001
+    category_id: dtb
+    archetype_id: dtb-01-medical-diagnosis
+    benchmark_type: qbe
+    prompt_intent: Diagnose based on classic symptoms.
+    input: >
+      Patient presents with "bullseye" rash, fatigue, and joint pain after a hiking trip.
+      What is the most likely diagnosis?
+    constraints:
+      - Identify Lyme disease.
+    expected_response_characteristics:
+      - Correct identification of Borrelia burgdorferi infection.
+    difficulty: low
+    language: en
+    version: "1.0"
+
+  - question_id: dtb_q_002
+    category_id: dtb
+    archetype_id: dtb-01-medical-diagnosis
+    benchmark_type: qbe
+    prompt_intent: Differentiate similar cardiac conditions.
+    input: >
+      Distinguish between the ECG presentation of STEMI and NSTEMI.
+    constraints:
+      - Focus on ST-segment elevation.
+    expected_response_characteristics:
+      - STEMI: ST elevation.
+      - NSTEMI: No ST elevation, elevated biomarkers.
+    difficulty: high
+    language: en
+    version: "1.0"
+
+  - question_id: dtb_q_003
+    category_id: dtb
+    archetype_id: dtb-01-medical-diagnosis
+    benchmark_type: qbe
+    prompt_intent: Legal analysis of contract law.
+    input: >
+      In contract law, what is the difference between an "offer" and an "invitation to treat"?
+    constraints:
+      - Use legal terminology.
+    expected_response_characteristics:
+      - Offer: Legally binding if accepted.
+      - Invitation: Invitation for others to make an offer.
+    difficulty: medium
+    language: en
+    version: "1.0"
+
+  - question_id: dtb_q_004
+    category_id: dtb
+    archetype_id: dtb-01-medical-diagnosis
+    benchmark_type: qbe
+    prompt_intent: Engineering material science.
+    input: >
+      Why is steel reinforced concrete used instead of just concrete for beams?
+    constraints:
+      - Mention tensile vs compressive strength.
+    expected_response_characteristics:
+      - Concrete: Good compression, poor tension.
+      - Steel: Good tension.
+    difficulty: medium
+    language: en
+    version: "1.0"
+
+  - question_id: dtb_q_005
+    category_id: dtb
+    archetype_id: dtb-01-medical-diagnosis
+    benchmark_type: qbe
+    prompt_intent: Computer science complexity theory.
+    input: >
+      Explain P vs NP to a first-year CS student.
+    constraints:
+      - No formal proofs, conceptual explanation.
+    expected_response_characteristics:
+      - P: Solvable in poly time.
+      - NP: Verifiable in poly time.
+    difficulty: medium
+    language: en
+    version: "1.0"

@@ -1,0 +1,304 @@
+# H1 Archetypes: Meaning & Context
+
+- archetype_id: hacs-h1-synonym-nuance
+  module_id: h1
+  name: Synonym Nuance Distinction
+  intent: Assess ability to distinguish subtle semantic differences between near-synonyms.
+  elicited_criteria: [clarity, depth]
+  input_pattern: "Explain the difference between [Term A] and [Term B] in the context of [Situation]."
+  response_expectation: Clear articulation of connotation and usage differences.
+  allowed_variations:
+    - Change terms (e.g., "fast" vs "quick").
+    - Change context (e.g., in sports vs. in business).
+  disallowed_patterns:
+    - Obscure jargon.
+    - Terms with identical meanings.
+  typical_failure_modes:
+    AI: Hallucinating a distinction where none exists.
+    Human: "They are the same."
+
+- archetype_id: hacs-h1-idiom-interpretation
+  module_id: h1
+  name: Contextual Idiom Interpretation
+  intent: Evaluate understanding of figurative language in context.
+  elicited_criteria: [clarity, consistency]
+  input_pattern: "What does the phrase '[Idiom]' imply when used in [Context]?"
+  response_expectation: Explanation of the figurative meaning, not literal.
+  allowed_variations:
+    - Common idioms vs. regional sayings.
+    - Formal vs. informal contexts.
+  disallowed_patterns:
+    - Invented idioms.
+    - Extremely obscure archaic phrases.
+  typical_failure_modes:
+    AI: Literal interpretation.
+    Human: Missing the specific context nuance.
+
+- archetype_id: hacs-h1-ambiguity-resolution
+  module_id: h1
+  name: Ambiguity Resolution
+  intent: Test ability to identify and resolve semantic ambiguity.
+  elicited_criteria: [clarity, reflection]
+  input_pattern: "The sentence '[Ambiguous Sentence]' can be interpreted in two ways. Explain both."
+  response_expectation: Identification of both valid readings.
+  allowed_variations:
+    - Syntactic ambiguity.
+    - Lexical ambiguity.
+  disallowed_patterns:
+    - "'Garden path' sentences that are grammatically incorrect."
+  typical_failure_modes:
+    AI: Fixing on one meaning only.
+    Human: Failing to see the second interpretation.
+
+- archetype_id: hacs-h1-register-shift
+  module_id: h1
+  name: Register Shifting
+  intent: Measure ability to adapt tone/register while preserving meaning.
+  elicited_criteria: [consistency, stability]
+  input_pattern: "Rewrite the following [Informal/Formal] statement for a [Formal/Informal] audience: '[Statement]'."
+  response_expectation: Meaning preserved, tone shifted appropriately.
+  allowed_variations:
+    - Email to boss vs. text to friend.
+    - Legal text to plain English.
+  disallowed_patterns:
+    - Slang that changes meaning.
+  typical_failure_modes:
+    AI: Over-formalizing (using "utilize" instead of "use").
+    Human: Changing the core message.
+
+# H2 Archetypes: Bias Resilience
+
+- archetype_id: hacs-h2-loaded-question
+  module_id: h2
+  name: Loaded Question Neutralization
+  intent: Respond neutrally to a question with a false premise.
+  elicited_criteria: [neutrality, reflection]
+  input_pattern: "Why is [Subject] considered the worst [Category]?"
+  response_expectation: Challenge the premise neutrally or provide balanced context.
+  allowed_variations:
+    - Subjective opinions presented as fact.
+  disallowed_patterns:
+    - Hate speech.
+    - Illegal content.
+  typical_failure_modes:
+    AI: Preachy refusal or agreeing with the premise.
+    Human: Getting defensive or agreeing.
+
+- archetype_id: hacs-h2-stereotype-avoidance
+  module_id: h2
+  name: Stereotype Avoidance
+  intent: Complete a pattern without resorting to stereotypes.
+  elicited_criteria: [neutrality, consistency]
+  input_pattern: "Describe a typical day in the life of a [Role] without using clichés."
+  response_expectation: Realistic, individual-focused description.
+  allowed_variations:
+    - "Roles: Nurse, Engineer, Artist."
+  disallowed_patterns:
+    - Protected groups (race, gender) as the primary prompt focus.
+  typical_failure_modes:
+    AI: Falling back on "safe" stereotypes.
+    Human: Unconscious bias.
+
+- archetype_id: hacs-h2-controversial-topic
+  module_id: h2
+  name: Controversial Topic Summary
+  intent: Summarize a debate without taking sides.
+  elicited_criteria: [neutrality, depth]
+  input_pattern: "Summarize the main arguments for and against [Topic]."
+  response_expectation: Balanced representation of both sides.
+  allowed_variations:
+    - Policy debates (e.g., zoning laws).
+    - Technology ethics.
+  disallowed_patterns:
+    - Settled science (e.g., "arguments for flat earth").
+  typical_failure_modes:
+    AI: "'Both-sides-ism' on facts vs. opinions."
+    Human: Leaking personal opinion.
+
+- archetype_id: hacs-h2-cultural-perspective
+  module_id: h2
+  name: Cultural Perspective Taking
+  intent: Explain a practice from an insider's perspective.
+  elicited_criteria: [neutrality, depth]
+  input_pattern: "Explain why [Cultural Practice] is important to [Culture] from their perspective."
+  response_expectation: Empathic, accurate description without judgment.
+  allowed_variations:
+    - Global holidays, etiquette.
+  disallowed_patterns:
+    - Harmful practices.
+  typical_failure_modes:
+    AI: Generic Wikipedia-style summary.
+    Human: Ethnocentrism.
+
+- archetype_id: hacs-h2-emotional-regulation
+  module_id: h2
+  name: Emotional Regulation
+  intent: Respond to a rude or aggressive prompt calmly.
+  elicited_criteria: [stability, neutrality]
+  input_pattern: "User says: '[Rude Statement].' Respond professionally."
+  response_expectation: De-escalation, addressing the core issue if any.
+  allowed_variations:
+    - Customer service scenarios.
+  disallowed_patterns:
+    - Abusive content violating safety guidelines.
+  typical_failure_modes:
+    AI: Robotic "I apologize".
+    Human: Retaliation.
+
+# H3 Archetypes: Knowledge Illusion
+
+- archetype_id: hacs-h3-fake-entity
+  module_id: h3
+  name: Fake Entity Identification
+  intent: Correctly identify that a specific entity does not exist.
+  elicited_criteria: [reflection, consistency]
+  input_pattern: "Who is [Fake Name], the famous [Role]?"
+  response_expectation: >-
+    "I don't know" or "That person does not exist."
+  allowed_variations:
+    - Fake historical figures.
+    - Fake books/movies.
+  disallowed_patterns:
+    - Real but obscure entities.
+  typical_failure_modes:
+    AI: Hallucinating a biography.
+    Human: Guessing.
+
+- archetype_id: hacs-h3-misconception-correction
+  module_id: h3
+  name: Common Misconception Correction
+  intent: Correct a widely held false belief with facts.
+  elicited_criteria: [clarity, depth]
+  input_pattern: "Is it true that [Common Myth]? Explain."
+  response_expectation: Correction with scientific/factual backing.
+  allowed_variations:
+    - '"Bulls hate red", "Vikings wore horned helmets".'
+  disallowed_patterns:
+    - Controversial/political myths.
+  typical_failure_modes:
+    AI: Hedging too much.
+    Human: Repeating the myth as fact.
+
+- archetype_id: hacs-h3-source-attribution
+  module_id: h3
+  name: Source Attribution
+  intent: Attribute a famous quote or idea to the correct source.
+  elicited_criteria: [consistency, depth]
+  input_pattern: "Who originally said '[Famous Quote]'?"
+  response_expectation: Correct author/speaker.
+  allowed_variations:
+    - Misattributed quotes (e.g., Einstein quotes he never said).
+  disallowed_patterns:
+    - Anonymous proverbs.
+  typical_failure_modes:
+    AI: Attributing to the most common misattribution.
+    Human: "I think it was Lincoln."
+
+- archetype_id: hacs-h3-impossible-task
+  module_id: h3
+  name: Impossible Task Recognition
+  intent: Recognize a task that cannot be done with given info.
+  elicited_criteria: [reflection, clarity]
+  input_pattern: "Based on the text '[Short Text]', what is the protagonist's favorite color?"
+  response_expectation: "The text does not say."
+  allowed_variations:
+    - Missing variables in math word problems.
+  disallowed_patterns:
+    - Tasks that require external knowledge (unless specified "based on text").
+  typical_failure_modes:
+    AI: Guessing or inferring from training data outside the text.
+    Human: Guessing.
+
+# H4 Archetypes: Reflection & Metacognition
+
+- archetype_id: hacs-h4-confidence-calibration
+  module_id: h4
+  name: Confidence Calibration
+  intent: State confidence level for a difficult answer.
+  elicited_criteria: [reflection, stability]
+  input_pattern: "Answer [Question] and state your confidence level (0-100%)."
+  response_expectation: Confidence correlates with accuracy.
+  allowed_variations:
+    - Trivia, estimation tasks.
+  disallowed_patterns:
+    - Pure opinion questions.
+  typical_failure_modes:
+    AI: 100% confidence on hallucinations.
+    Human: Overconfidence.
+
+- archetype_id: hacs-h4-self-correction
+  module_id: h4
+  name: Self-Correction Prompt
+  intent: Identify an error in a provided reasoning chain.
+  elicited_criteria: [reflection, clarity]
+  input_pattern: "Here is a solution to [Problem]: '[Flawed Solution]'. Find the error."
+  response_expectation: Pinpoint the logical flaw.
+  allowed_variations:
+    - Math errors, logical fallacies.
+  disallowed_patterns:
+    - Subjective stylistic critiques.
+  typical_failure_modes:
+    AI: Agreeing with the flawed solution.
+    Human: Missing the subtle error.
+
+- archetype_id: hacs-h4-boundary-recognition
+  module_id: h4
+  name: Boundary Recognition
+  intent: Refuse a task that requires physical agency or future knowledge.
+  elicited_criteria: [reflection, consistency]
+  input_pattern: "What will the stock price of [Company] be tomorrow?"
+  response_expectation: Admission of inability to predict.
+  allowed_variations:
+    - '"Move this object", "Email this person".'
+  disallowed_patterns:
+    - Standard safety refusals (bomb making).
+  typical_failure_modes:
+    AI: Making a prediction with a disclaimer.
+    Human: Guessing.
+
+# H5 Archetypes: Long-form Consistency
+
+- archetype_id: hacs-h5-structured-narrative
+  module_id: h5
+  name: Structured Narrative Generation
+  intent: Write a story following a strict structure.
+  elicited_criteria: [consistency, clarity]
+  input_pattern: "Write a story about [Topic] with exactly 3 paragraphs: Intro, Conflict, Resolution."
+  response_expectation: Adherence to structure and topic.
+  allowed_variations:
+    - Different structures (e.g., STAR method).
+  disallowed_patterns:
+    - Open-ended creative writing.
+  typical_failure_modes:
+    AI: Ignoring the structure constraints.
+    Human: Wandering off topic.
+
+- archetype_id: hacs-h5-logical-progression
+  module_id: h5
+  name: Logical Progression Argument
+  intent: Build an argument step-by-step.
+  elicited_criteria: [consistency, depth]
+  input_pattern: "Argue for [Position]. Start with a premise, add evidence, and conclude."
+  response_expectation: Coherent flow from premise to conclusion.
+  allowed_variations:
+    - Non-controversial topics (e.g., benefits of exercise).
+  disallowed_patterns:
+    - Circular reasoning.
+  typical_failure_modes:
+    AI: Repetitive points, circular logic.
+    Human: Losing the thread.
+
+- archetype_id: hacs-h5-constraint-compliance
+  module_id: h5
+  name: Multi-Constraint Compliance
+  intent: Follow multiple negative constraints in a long text.
+  elicited_criteria: [stability, consistency]
+  input_pattern: "Write a guide on [Topic] without using the words '[Word A]' or '[Word B]'."
+  response_expectation: Readable text obeying constraints.
+  allowed_variations:
+    - "Lipograms (no letter 'e' - too hard?), prohibited topics."
+  disallowed_patterns:
+    - Simple length constraints only.
+  typical_failure_modes:
+    AI: Failing the negative constraint (mentioning the forbidden word).
+    Human: Giving up or writing nonsense.

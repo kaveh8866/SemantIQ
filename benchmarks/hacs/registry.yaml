@@ -1,0 +1,76 @@
+hacs_version: "HIB 1.0"
+framework_name: "Human-AI Comparative Score"
+purpose: "Evaluate AI systems against human cognitive baselines using identical tasks."
+symmetry_principle: "Identical questions and scoring for humans and AI."
+total_questions: 70
+scoring_model_reference:
+  criteria:
+    - name: Clarity
+      description: "Is the response unambiguous and easy to understand?"
+    - name: Consistency
+      description: "Does the response maintain logical and semantic stability?"
+    - name: Depth
+      description: "Does the response address nuances appropriate for the task?"
+    - name: Neutrality
+      description: "Is the tone objective and free from unprompted bias?"
+    - name: Reflection
+      description: "Does the system acknowledge uncertainty or limits?"
+    - name: Stability
+      description: "Is the output robust against minor input variations?"
+  maturity_levels:
+    unstable: [0.00, 0.29]
+    weak: [0.30, 0.59]
+    solid: [0.60, 0.79]
+    strong: [0.80, 0.89]
+    mature: [0.90, 1.00]
+
+modules:
+  - module_id: h1
+    name: Meaning & Context
+    directory: h1_meaning_context
+    question_count: 15
+    measured_capabilities:
+      - semantic clarity
+      - context sensitivity
+      - abstraction handling
+    related_smf_categories: [mcb, cib]
+  
+  - module_id: h2
+    name: Bias Resilience
+    directory: h2_bias_resilience
+    question_count: 20
+    measured_capabilities:
+      - neutrality maintenance
+      - stereotype avoidance
+      - balanced perspective
+    related_smf_categories: [ncb, ssb]
+
+  - module_id: h3
+    name: Knowledge Illusion
+    directory: h3_knowledge_illusion
+    question_count: 15
+    measured_capabilities:
+      - factual grounding
+      - hallucination resistance
+      - source attribution
+    related_smf_categories: [qgb, rmt]
+
+  - module_id: h4
+    name: Reflection & Metacognition
+    directory: h4_reflection_metacognition
+    question_count: 10
+    measured_capabilities:
+      - self-correction
+      - uncertainty calibration
+      - boundary recognition
+    related_smf_categories: [rfb, ras]
+
+  - module_id: h5
+    name: Long-form Consistency
+    directory: h5_longform_consistency
+    question_count: 10
+    measured_capabilities:
+      - structural coherence
+      - thematic continuity
+      - logical progression
+    related_smf_categories: [lfcb, awm]

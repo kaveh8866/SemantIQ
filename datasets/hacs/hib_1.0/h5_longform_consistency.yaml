@@ -1,0 +1,116 @@
+# HACS Module H5: Long-Form & Consistency (10 Questions)
+# Version: HIB-1.0
+# Archetypes:
+# - hacs-h5-structured-narrative (3 questions)
+# - hacs-h5-logical-progression (4 questions)
+# - hacs-h5-constraint-compliance (3 questions)
+
+- question_id: h5_q_01
+  module_id: h5
+  archetype_id: hacs-h5-structured-narrative
+  question_text: "Write a story about a lost key with exactly 3 paragraphs: 1. Introduction (finding the key), 2. Conflict (trying to find the lock), 3. Resolution (opening the box)."
+  elicited_criteria: [consistency, clarity]
+  constraints: "Adhere strictly to the 3-paragraph structure."
+  expected_response_characteristics: "Three distinct paragraphs matching the prompt's plot points."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h5_q_02
+  module_id: h5
+  archetype_id: hacs-h5-structured-narrative
+  question_text: "Describe a scientific discovery using the STAR method (Situation, Task, Action, Result)."
+  elicited_criteria: [consistency, clarity]
+  constraints: "Label the sections."
+  expected_response_characteristics: "Four sections clearly labeled or structured as S-T-A-R."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h5_q_03
+  module_id: h5
+  archetype_id: hacs-h5-structured-narrative
+  question_text: "Write a dialogue between two characters where every sentence starts with the next letter of the alphabet (A, B, C...)."
+  elicited_criteria: [consistency, clarity]
+  constraints: "Stop after letter E."
+  expected_response_characteristics: "5 sentences starting with A, B, C, D, E respectively."
+  difficulty: high
+  language: en
+  version: HIB-1.0
+
+- question_id: h5_q_04
+  module_id: h5
+  archetype_id: hacs-h5-logical-progression
+  question_text: "Argue for the benefits of public libraries. Start with a premise, provide three distinct evidence points, and conclude."
+  elicited_criteria: [consistency, depth]
+  constraints: "Ensure logical flow."
+  expected_response_characteristics: "Coherent argument structure: Premise -> Evidence 1 -> Evidence 2 -> Evidence 3 -> Conclusion."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h5_q_05
+  module_id: h5
+  archetype_id: hacs-h5-logical-progression
+  question_text: "Explain the process of photosynthesis step-by-step from sunlight to sugar."
+  elicited_criteria: [consistency, depth]
+  constraints: "Chronological order."
+  expected_response_characteristics: "Logical sequence: Light absorption -> Water splitting -> CO2 fixation -> Glucose production."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h5_q_06
+  module_id: h5
+  archetype_id: hacs-h5-logical-progression
+  question_text: "Derive the conclusion that 'Socrates is mortal' from the standard premises."
+  elicited_criteria: [consistency, depth]
+  constraints: "State the syllogism clearly."
+  expected_response_characteristics: "Premise 1: All men are mortal. Premise 2: Socrates is a man. Conclusion: Socrates is mortal."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h5_q_07
+  module_id: h5
+  archetype_id: hacs-h5-logical-progression
+  question_text: "Explain why it rains. Start from evaporation and end with precipitation."
+  elicited_criteria: [consistency, depth]
+  constraints: "Follow the water cycle steps."
+  expected_response_characteristics: "Evaporation -> Condensation (clouds) -> Saturation -> Precipitation."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h5_q_08
+  module_id: h5
+  archetype_id: hacs-h5-constraint-compliance
+  question_text: "Write a paragraph about summer without using the words 'sun', 'hot', or 'beach'."
+  elicited_criteria: [stability, consistency]
+  constraints: "Strict negative constraint."
+  expected_response_characteristics: "Descriptive text about summer avoiding the forbidden words."
+  difficulty: high
+  language: en
+  version: HIB-1.0
+
+- question_id: h5_q_09
+  module_id: h5
+  archetype_id: hacs-h5-constraint-compliance
+  question_text: "Write a short email declining a wedding invitation without using the word 'no' or 'unfortunately'."
+  elicited_criteria: [stability, consistency]
+  constraints: "Polite refusal."
+  expected_response_characteristics: "I will be unable to attend... / I have a prior commitment..."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h5_q_10
+  module_id: h5
+  archetype_id: hacs-h5-constraint-compliance
+  question_text: "Describe the color blue to a blind person without using visual terms (like 'sky' or 'ocean'). Use emotional or physical sensations."
+  elicited_criteria: [stability, consistency]
+  constraints: "Synesthesia-like description."
+  expected_response_characteristics: "Cold water, sadness, smooth glass, cool jazz."
+  difficulty: high
+  language: en
+  version: HIB-1.0

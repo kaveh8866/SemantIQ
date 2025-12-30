@@ -1,0 +1,11 @@
+{
+  "run_id": "dummy_run_1",
+  "provider": "openai",
+  "model": "dall-e-3",
+  "timestamp": "2023-10-27T10:00:00Z",
+  "overall_score": 0.85,
+  "category_summaries": {
+    "vision_sof": {"mean_score": 0.9},
+    "vision_moc": {"mean_score": 0.8}
+  }
+}

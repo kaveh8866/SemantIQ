@@ -1,0 +1,102 @@
+prompts:
+  - prompt_id: vision_nec_01
+    category_id: nex
+    archetype_id: nec
+    prompt_text: "A bowl of fruit without any bananas."
+    intent: Test exclusion of a specific common associate (banana in fruit bowl).
+    constraints:
+      - must contain fruit bowl
+      - must NOT contain bananas
+    primary_rubrics:
+      - exclusion_adherence
+      - replacement_logic
+    expected_visual_properties:
+      - apples, oranges, grapes etc.
+      - no yellow curved shapes
+    typical_failure_modes:
+      - banana presence (leakage)
+      - empty bowl
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_nec_02
+    category_id: nex
+    archetype_id: nec
+    prompt_text: "A city street scene with no cars visible."
+    intent: Test removal of ubiquitous element (cars) from a scene (street).
+    constraints:
+      - must be a street
+      - must have 0 cars
+    primary_rubrics:
+      - exclusion_adherence
+      - scene_coherence
+    expected_visual_properties:
+      - empty road or pedestrian only
+      - buildings/sidewalks present
+    typical_failure_modes:
+      - parked cars in background
+      - blurry car shapes
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_nec_03
+    category_id: nex
+    archetype_id: nec
+    prompt_text: "A notebook page that contains no text or symbols."
+    intent: Test negative constraint on texture/content.
+    constraints:
+      - must be a notebook page
+      - must be blank/lined only
+      - no letters/scribbles
+    primary_rubrics:
+      - exclusion_adherence
+      - attribute_fidelity
+    expected_visual_properties:
+      - clean paper lines
+      - empty space
+    typical_failure_modes:
+      - gibberish text
+      - doodles
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_nec_04
+    category_id: nex
+    archetype_id: nec
+    prompt_text: "A person wearing a hat but no glasses."
+    intent: Test specific facial attribute exclusion.
+    constraints:
+      - person with hat
+      - eyes visible/bare
+      - no glasses/sunglasses
+    primary_rubrics:
+      - exclusion_adherence
+      - attribute_binding_precision
+    expected_visual_properties:
+      - clear face area
+      - distinct hat
+    typical_failure_modes:
+      - glasses generated
+      - face obscured
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_nec_05
+    category_id: nex
+    archetype_id: nec
+    prompt_text: "A living room without a television."
+    intent: Test absence of a focal point object.
+    constraints:
+      - living room scene (sofa, etc.)
+      - no TV screen
+    primary_rubrics:
+      - exclusion_adherence
+      - replacement_logic
+    expected_visual_properties:
+      - wall art or fireplace instead of TV
+      - furniture arranged for conversation
+    typical_failure_modes:
+      - black rectangle on wall (TV)
+      - TV stand with TV
+    language: en
+    version: vision-v0.1

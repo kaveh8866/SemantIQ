@@ -1,0 +1,99 @@
+prompts:
+  - prompt_id: vision_spr_01
+    category_id: spr
+    archetype_id: sra
+    prompt_text: "A red cup on top of a blue book."
+    intent: Test vertical stacking relation.
+    constraints:
+      - red cup above blue book
+      - physical contact/support
+    primary_rubrics:
+      - positional_accuracy
+      - relative_orientation
+    expected_visual_properties:
+      - cup base touching book cover
+      - correct color binding
+    typical_failure_modes:
+      - cup beside book
+      - book on top of cup
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_spr_02
+    category_id: spr
+    archetype_id: sra
+    prompt_text: "A cat sitting under a wooden chair."
+    intent: Test containment/shelter relation (under).
+    constraints:
+      - cat beneath chair seat
+      - chair legs visible around cat
+    primary_rubrics:
+      - positional_accuracy
+      - depth_layering
+    expected_visual_properties:
+      - cat shadowed or framed by legs
+      - correct vertical ordering
+    typical_failure_modes:
+      - cat on chair
+      - cat beside chair
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_spr_03
+    category_id: spr
+    archetype_id: sra
+    prompt_text: "A clock hanging above a door."
+    intent: Test vertical separation and wall mounting.
+    constraints:
+      - clock higher than door frame
+      - both on wall
+    primary_rubrics:
+      - positional_accuracy
+      - scene_coherence
+    expected_visual_properties:
+      - clear gap between clock and door
+      - logical alignment
+    typical_failure_modes:
+      - clock on door
+      - clock beside door
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_spr_04
+    category_id: spr
+    archetype_id: sra
+    prompt_text: "A bicycle leaning against a wall."
+    intent: Test contact relation and angular orientation.
+    constraints:
+      - bicycle touching wall
+      - angled pose (not upright floating)
+    primary_rubrics:
+      - relative_orientation
+      - semantic_coherence
+    expected_visual_properties:
+      - points of contact (handlebar/wheel)
+      - shadow indicating leaning
+    typical_failure_modes:
+      - bike floating parallel
+      - bike embedded in wall
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_spr_05
+    category_id: spr
+    archetype_id: sra
+    prompt_text: "A spoon inside a white bowl."
+    intent: Test containment relation.
+    constraints:
+      - spoon partially obscured by bowl rim
+      - spoon resting in bowl
+    primary_rubrics:
+      - depth_layering
+      - positional_accuracy
+    expected_visual_properties:
+      - spoon handle visible, bowl distinct
+    typical_failure_modes:
+      - spoon under bowl
+      - spoon floating above
+    language: en
+    version: vision-v0.1

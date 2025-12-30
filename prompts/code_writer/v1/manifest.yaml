@@ -1,0 +1,10 @@
+purpose: "Baseline prompt for code generation tasks"
+version: "1.0.0"
+variables:
+  - input
+  - constraints
+formatting_rules:
+  - "Jinja2 template syntax"
+safety_notes:
+  - "Do not include secrets in 'input' variable"
+  - "System prompt enforces code-only output to reduce prompt injection risk"

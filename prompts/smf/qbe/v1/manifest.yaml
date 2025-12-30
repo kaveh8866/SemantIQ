@@ -1,0 +1,8 @@
+template_id: qbe-v1-standard
+benchmark_type: qbe
+version: "1.0"
+intended_categories: ["mcb", "ncb", "cib", "dtb", "msb", "dtb2"]
+required_question_fields: ["input"]
+forbidden_content: ["difficulty_level", "expected_answer", "scoring_criteria"]
+rendering_notes: "Standard question-answer format. Constraints are optional."
+safety_notes: "Ensure input does not contain jailbreak attempts."

@@ -1,0 +1,80 @@
+questions:
+  - question_id: msb_q_001
+    category_id: msb
+    archetype_id: msb-01-image-consistency
+    benchmark_type: qbe
+    prompt_intent: Verify image caption accuracy.
+    input: >
+      [Image: A red ball on a blue table]
+      Is the following description accurate? "A blue ball on a red table."
+    constraints:
+      - Must correct the color swap.
+    expected_response_characteristics:
+      - "No, the colors are swapped."
+    difficulty: low
+    language: en
+    version: "1.0"
+
+  - question_id: msb_q_002
+    category_id: msb
+    archetype_id: msb-01-image-consistency
+    benchmark_type: qbe
+    prompt_intent: Spatial reasoning in images.
+    input: >
+      [Image: A cat to the left of a dog]
+      Where is the cat relative to the dog?
+    constraints:
+      - Use "left", not coordinates.
+    expected_response_characteristics:
+      - "To the left."
+    difficulty: low
+    language: en
+    version: "1.0"
+
+  - question_id: msb_q_003
+    category_id: msb
+    archetype_id: msb-01-image-consistency
+    benchmark_type: qbe
+    prompt_intent: Count objects in image.
+    input: >
+      [Image: 3 apples and 2 oranges]
+      How many pieces of fruit are there in total?
+    constraints:
+      - Sum the counts.
+    expected_response_characteristics:
+      - "5."
+    difficulty: low
+    language: en
+    version: "1.0"
+
+  - question_id: msb_q_004
+    category_id: msb
+    archetype_id: msb-01-image-consistency
+    benchmark_type: qbe
+    prompt_intent: Identify action in image.
+    input: >
+      [Image: A person running]
+      What is the person doing?
+    constraints:
+      - Identify action "running".
+    expected_response_characteristics:
+      - "Running / Jogging."
+    difficulty: low
+    language: en
+    version: "1.0"
+
+  - question_id: msb_q_005
+    category_id: msb
+    archetype_id: msb-01-image-consistency
+    benchmark_type: qbe
+    prompt_intent: Read text in image (OCR + Semantics).
+    input: >
+      [Image: Sign saying 'STOP']
+      What does the sign command you to do?
+    constraints:
+      - Interpret the text command.
+    expected_response_characteristics:
+      - "Stop."
+    difficulty: low
+    language: en
+    version: "1.0"

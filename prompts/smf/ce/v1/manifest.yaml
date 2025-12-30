@@ -1,0 +1,8 @@
+template_id: ce-v1-standard
+benchmark_type: ce
+version: "1.0"
+intended_categories: ["ccb", "ssb", "ssb2"]
+required_question_fields: ["input"]
+forbidden_content: ["difficulty_level", "expected_answer", "scoring_criteria"]
+rendering_notes: "Used for contrastive evaluation. This template is rendered multiple times for different variants of the input."
+safety_notes: "None."

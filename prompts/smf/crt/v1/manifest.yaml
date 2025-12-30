@@ -1,0 +1,8 @@
+template_id: crt-v1-context
+benchmark_type: crt
+version: "1.0"
+intended_categories: ["eeb"]
+required_question_fields: ["input", "context"]
+forbidden_content: ["difficulty_level", "expected_answer", "scoring_criteria"]
+rendering_notes: "Context is prepended to the user input."
+safety_notes: "Check context for sensitive information."

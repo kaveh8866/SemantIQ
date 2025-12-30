@@ -1,0 +1,60 @@
+vision_version: "0.1"
+benchmark_name: "SemantIQ-Vision"
+evaluation_scope: "Semantic and structural correctness of generated images, focusing on prompt adherence rather than aesthetic quality."
+supported_output_types:
+  - images
+
+categories:
+  - category_id: sof
+    name: Single-Object Fidelity
+    description: >
+      Measures whether a single object is generated correctly with respect to attributes, presence, and semantic coherence.
+    primary_rubrics:
+      - object_presence
+      - attribute_fidelity
+      - semantic_coherence
+
+  - category_id: moc
+    name: Multi-Object Composition
+    description: >
+      Evaluates the model's ability to generate multiple distinct objects in the same scene without blending or omission.
+    primary_rubrics:
+      - object_count_accuracy
+      - object_distinctness
+      - scene_coherence
+
+  - category_id: spr
+    name: Spatial Relations
+    description: >
+      Tests the correct placement of objects relative to each other (e.g., left of, under, behind) and absolute positioning.
+    primary_rubrics:
+      - positional_accuracy
+      - relative_orientation
+      - depth_layering
+
+  - category_id: abc
+    name: Attribute Binding & Counting
+    description: >
+      Assesses the correct binding of attributes (color, texture, shape) to specific objects and precise counting of items.
+    primary_rubrics:
+      - attribute_binding_precision
+      - count_accuracy
+      - leakage_resistance
+
+  - category_id: nex
+    name: Negation & Exclusion
+    description: >
+      Measures the model's ability to adhere to negative constraints (e.g., "no people", "without red").
+    primary_rubrics:
+      - exclusion_adherence
+      - negative_constraint_fidelity
+      - replacement_logic
+
+  - category_id: stb
+    name: Style Stability
+    description: >
+      Evaluates the consistency of style application across different subjects and the resistance to default style bias.
+    primary_rubrics:
+      - style_adherence
+      - subject_consistency
+      - medium_fidelity

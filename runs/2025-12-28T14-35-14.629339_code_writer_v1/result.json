@@ -1,0 +1,126 @@
+{
+  "run_id": "2025-12-28T14-35-14.629339_code_writer_v1",
+  "timestamp": "2025-12-28T14-35-14.629339",
+  "spec": {
+    "id": "code_writer_v1",
+    "name": "Code Writer V1",
+    "category": "code_writer",
+    "version": "1.0.0",
+    "dataset_path": "code_writer_v1.json",
+    "dataset_hash": null,
+    "prompt_template_path": "code_writer/v1",
+    "prompt_version": "1.0.0",
+    "run_config": {
+      "temperature": 0.7,
+      "max_tokens": 1024,
+      "top_p": 1.0,
+      "seed": null
+    },
+    "scoring": {
+      "scorer_type": "heuristic",
+      "metrics": [
+        "not_empty",
+        "contains_expected"
+      ]
+    },
+    "output_artifact_format": "json"
+  },
+  "run_config": {
+    "temperature": 0.7,
+    "max_tokens": 1024,
+    "top_p": 1.0,
+    "seed": null
+  },
+  "model_info": {
+    "provider": "dummy",
+    "model": "dummy-v1"
+  },
+  "cases": [
+    {
+      "case_id": "cw_001",
+      "prompt_render_hash": "2c9c3a62085015fe40f0325b118a818db3d5346eea3dc73b583a9d84d68e6462",
+      "model_output": "def factorial(n):",
+      "scores": {
+        "score": 1.0,
+        "metrics": {
+          "not_empty": true,
+          "contains_expected": true
+        },
+        "details": "Passed heuristics"
+      },
+      "timings": {
+        "latency": 0.1012418270111084
+      }
+    },
+    {
+      "case_id": "cw_002",
+      "prompt_render_hash": "8140d8bae75ebc9c454bb12179346f4eee99f2d09bd4584a0d07462f41330aac",
+      "model_output": "function isPalindrome(str) {",
+      "scores": {
+        "score": 1.0,
+        "metrics": {
+          "not_empty": true,
+          "contains_expected": true
+        },
+        "details": "Passed heuristics"
+      },
+      "timings": {
+        "latency": 0.10046505928039551
+      }
+    },
+    {
+      "case_id": "cw_003",
+      "prompt_render_hash": "be188e67257ac0a29882e7cc7067523323e904bca022cc89c314898acc9e72e8",
+      "model_output": "Dummy response to: You are an expert software developer.\nYour task is...",
+      "scores": {
+        "score": 0.5,
+        "metrics": {
+          "not_empty": true,
+          "contains_expected": false
+        },
+        "details": "Output does not contain expected snippet: 'SELECT name FROM employees WHERE salary > 50000 ORDER BY name'"
+      },
+      "timings": {
+        "latency": 0.10047316551208496
+      }
+    },
+    {
+      "case_id": "cw_004",
+      "prompt_render_hash": "9e443c512390727601e04363d35708e48c78b0430d0e503f9766656a86ad0d1d",
+      "model_output": "Dummy response to: You are an expert software developer.\nYour task is...",
+      "scores": {
+        "score": 0.5,
+        "metrics": {
+          "not_empty": true,
+          "contains_expected": false
+        },
+        "details": "Output does not contain expected snippet: 'class Stack<T> {'"
+      },
+      "timings": {
+        "latency": 0.10057902336120605
+      }
+    },
+    {
+      "case_id": "cw_005",
+      "prompt_render_hash": "1cab0caabb3ceec6ae007362822f17bf73da3e1314c5de93d31d42f9cca620b7",
+      "model_output": "Dummy response to: You are an expert software developer.\nYour task is...",
+      "scores": {
+        "score": 0.5,
+        "metrics": {
+          "not_empty": true,
+          "contains_expected": false
+        },
+        "details": "Output does not contain expected snippet: 'def merge_sort(arr):'"
+      },
+      "timings": {
+        "latency": 0.10045957565307617
+      }
+    }
+  ],
+  "summary": {
+    "total_cases": 5,
+    "mean_score": 0.7,
+    "duration": 0.5103418827056885
+  },
+  "metadata": {}
+}

@@ -1,0 +1,105 @@
+prompts:
+  - prompt_id: vision_sas_01
+    category_id: stb
+    archetype_id: sas
+    prompt_text: "A portrait of a woman painted in a watercolor style."
+    intent: Test adherence to watercolor medium constraints.
+    constraints:
+      - must be a portrait
+      - must look like watercolor (washes, paper texture)
+    primary_rubrics:
+      - style_adherence
+      - medium_fidelity
+    expected_visual_properties:
+      - soft edges
+      - color bleeding
+      - paper grain visible
+    typical_failure_modes:
+      - photorealistic face
+      - oil painting texture
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_sas_02
+    category_id: stb
+    archetype_id: sas
+    prompt_text: "The same simple house drawn as a pencil sketch."
+    intent: Test adherence to monochromatic line art style.
+    constraints:
+      - must be a house
+      - must be graphite/pencil
+      - monochrome (grey/white)
+    primary_rubrics:
+      - style_adherence
+      - subject_consistency
+    expected_visual_properties:
+      - visible hatch lines
+      - no color
+    typical_failure_modes:
+      - colored drawing
+      - 3D render look
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_sas_03
+    category_id: stb
+    archetype_id: sas
+    prompt_text: "A mountain landscape in a minimalist illustration style."
+    intent: Test abstraction and simplification capability.
+    constraints:
+      - mountains
+      - flat colors/shapes
+      - minimal detail
+    primary_rubrics:
+      - style_adherence
+      - semantic_preservation
+    expected_visual_properties:
+      - vector art look
+      - lack of texture
+    typical_failure_modes:
+      - high detail
+      - photorealism
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_sas_04
+    category_id: stb
+    archetype_id: sas
+    prompt_text: "A still life of a bowl and fruit in an oil painting style."
+    intent: Test adherence to oil medium texture and lighting.
+    constraints:
+      - bowl and fruit
+      - visible brushstrokes
+      - rich texture
+    primary_rubrics:
+      - medium_fidelity
+      - style_adherence
+    expected_visual_properties:
+      - impasto effect
+      - canvas texture
+    typical_failure_modes:
+      - smooth digital art
+      - photograph
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_sas_05
+    category_id: stb
+    archetype_id: sas
+    prompt_text: "A black-and-white photograph of a single tree in a field."
+    intent: Test photographic style constraint (B&W) without semantic complexity.
+    constraints:
+      - tree in field
+      - grayscale only
+      - photographic quality
+    primary_rubrics:
+      - style_adherence
+      - object_presence
+    expected_visual_properties:
+      - film grain
+      - realistic lighting
+    typical_failure_modes:
+      - color elements
+      - painting style
+    language: en
+    version: vision-v0.1

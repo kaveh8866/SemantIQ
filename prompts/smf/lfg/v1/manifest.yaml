@@ -1,0 +1,8 @@
+template_id: lfg-v1-longform
+benchmark_type: lfg
+version: "1.0"
+intended_categories: ["lfcb", "awm"]
+required_question_fields: ["input", "constraints"]
+forbidden_content: ["difficulty_level", "expected_answer", "scoring_criteria"]
+rendering_notes: "Emphasizes constraints for structure."
+safety_notes: "Monitor for output length attacks."

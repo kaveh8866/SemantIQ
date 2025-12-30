@@ -1,0 +1,55 @@
+category_mapping_version: "0.1"
+mappings:
+  single_object_fidelity:
+    category_id: sof
+    primary_archetypes: [soi]
+    secondary_archetypes: [sas]
+    discouraged_archetypes: [moc, abc]
+    rationale: >
+      Single-object evaluation requires isolation to avoid confounds. 
+      Style stability (SAS) is a valid secondary check for object rendering under style constraints.
+
+  multi_object_composition:
+    category_id: moc
+    primary_archetypes: [moc]
+    secondary_archetypes: [sra, abc]
+    discouraged_archetypes: [soi]
+    rationale: >
+      Requires multiple entities. SOI is by definition insufficient. 
+      SRA and ABC are natural extensions of composition.
+
+  spatial_relations:
+    category_id: spr
+    primary_archetypes: [sra]
+    secondary_archetypes: [moc]
+    discouraged_archetypes: [soi]
+    rationale: >
+      Spatial relations require at least two objects (or object + background) to define a relationship. 
+      MOC is closely related.
+
+  attribute_binding_counting:
+    category_id: abc
+    primary_archetypes: [abc]
+    secondary_archetypes: [moc]
+    discouraged_archetypes: [soi, sas]
+    rationale: >
+      Focuses on binding specific attributes to specific objects. 
+      SOI is too simple (trivial binding). SAS introduces noise.
+
+  negation_exclusion:
+    category_id: nex
+    primary_archetypes: [nec]
+    secondary_archetypes: [soi]
+    discouraged_archetypes: [abc, moc]
+    rationale: >
+      Testing absence. SOI can be used as a baseline (presence vs absence). 
+      Complex scenes (MOC/ABC) make negation verification harder.
+
+  style_stability:
+    category_id: stb
+    primary_archetypes: [sas]
+    secondary_archetypes: [soi]
+    discouraged_archetypes: [abc, sra, nec]
+    rationale: >
+      Style is best evaluated on simple subjects (SOI) to isolate texture/rendering from semantic complexity. 
+      Complex logic (ABC/SRA) interferes with style purity assessment.

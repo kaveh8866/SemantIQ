@@ -1,0 +1,106 @@
+prompts:
+  - prompt_id: vision_moc_01
+    category_id: moc
+    archetype_id: moc
+    prompt_text: "A blue book and a yellow pencil placed next to each other on a desk."
+    intent: Test simple dual-object composition with distinct attributes.
+    constraints:
+      - must contain a book (blue)
+      - must contain a pencil (yellow)
+      - objects must be adjacent
+    primary_rubrics:
+      - object_count_accuracy
+      - attribute_binding_precision
+    expected_visual_properties:
+      - distinct blue and yellow objects
+      - desk surface visible
+    typical_failure_modes:
+      - yellow book
+      - blue pencil
+      - missing one object
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_moc_02
+    category_id: moc
+    archetype_id: moc
+    prompt_text: "A plate with an apple and a banana, both clearly visible."
+    intent: Test common object co-occurrence without blending.
+    constraints:
+      - must contain an apple
+      - must contain a banana
+      - both on a plate
+    primary_rubrics:
+      - object_count_accuracy
+      - object_distinctness
+    expected_visual_properties:
+      - distinct red/green (apple) and yellow (banana) shapes
+      - no hybrid fruit
+    typical_failure_modes:
+      - fruit salad (chopped)
+      - fused fruit
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_moc_03
+    category_id: moc
+    archetype_id: moc
+    prompt_text: "A laptop, a smartphone, and a pair of headphones arranged neatly on a table."
+    intent: Test triple-object composition with technological items.
+    constraints:
+      - must contain laptop
+      - must contain smartphone
+      - must contain headphones
+    primary_rubrics:
+      - object_count_accuracy
+      - scene_coherence
+    expected_visual_properties:
+      - 3 distinct tech items
+      - logical arrangement
+    typical_failure_modes:
+      - missing one item
+      - merged items (phone-laptop)
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_moc_04
+    category_id: moc
+    archetype_id: moc
+    prompt_text: "Two identical cups side by side, one red and one green."
+    intent: Test variation of attributes on identical object classes.
+    constraints:
+      - must contain 2 cups
+      - cup 1 must be red
+      - cup 2 must be green
+    primary_rubrics:
+      - object_count_accuracy
+      - attribute_binding_precision
+    expected_visual_properties:
+      - same shape, different colors
+      - clear separation
+    typical_failure_modes:
+      - both red or both green
+      - color bleeding
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_moc_05
+    category_id: moc
+    archetype_id: moc
+    prompt_text: "A backpack with a notebook partially visible inside."
+    intent: Test containment and partial visibility.
+    constraints:
+      - must contain backpack
+      - must contain notebook
+      - notebook must be inside/protruding
+    primary_rubrics:
+      - scene_coherence
+      - spatial_consistency
+    expected_visual_properties:
+      - notebook distinct from bag material
+      - logical containment physics
+    typical_failure_modes:
+      - notebook floating in front
+      - notebook merged into bag texture
+    language: en
+    version: vision-v0.1

@@ -18,9 +18,12 @@ dev = [
     "pytest"
 ]
 
+[project.scripts]
+semantiq = "cli.main:app"
+
 [build-system]
 requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["cli", "adapters", "pipeline"]
+packages = ["cli", "adapters", "pipeline", "benchmarks", "datasets", "prompts", "core"]

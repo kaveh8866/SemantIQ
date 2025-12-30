@@ -1,38 +1,68 @@
-# .
+# SemantIQ-M Unified Web UI
 
-This template should help get you started developing with Vue 3 in Vite.
+The official visualization and analysis frontend for the SemantIQ-M Benchmark Suite.
 
-## Recommended IDE Setup
+## Overview
+This Web UI provides a unified view across three benchmark domains:
+1. **SMF (Text)**: Semantic Alignment & Safety.
+2. **HACS (Human-AI)**: Human-in-the-loop collaboration.
+3. **Vision (T2I)**: Text-to-Image semantic correctness.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+It is designed as a **read-only, local-first** application to ensure privacy and reproducibility.
 
-## Recommended Browser Setup
+## Getting Started
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+### Prerequisites
+- Node.js (v18+)
+- Python (v3.10+) for the CLI
 
-## Customize configuration
+### Running Locally
+You can launch the UI directly from the SemantIQ CLI:
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+```bash
+# Serve the UI (starts API + Static File Server)
+bench ui serve
 
-## Project Setup
-
-```sh
-npm install
+# Build the frontend (if needed)
+bench ui build
 ```
 
-### Compile and Hot-Reload for Development
+Access the UI at: http://127.0.0.1:8000
 
-```sh
-npm run dev
-```
+### Development Mode
+For active frontend development (hot-reloading):
 
-### Compile and Minify for Production
+1. Start the API server:
+   ```bash
+   bench ui serve --dev
+   ```
+2. In a separate terminal, start Vite:
+   ```bash
+   cd webapp
+   npm run dev
+   ```
+   Access at: http://localhost:5173 (Requests will be proxied to the API)
 
-```sh
-npm run build
-```
+## Architecture
+
+### Data Loading
+The UI does not have a database. It reads JSON artifacts directly from the `reports/` directory:
+- `reports/smf/runs/<id>/overall_summary.json`
+- `reports/hacs/runs/<id>/overall_summary.json`
+- `reports/vision/runs/<id>/overall_summary.json`
+
+### Tech Stack
+- **Framework**: React + Vite + TypeScript
+- **Styling**: Tailwind CSS
+- **Charts**: Recharts
+- **Icons**: Lucide React
+- **Backend**: FastAPI (Python) - serves static files and provides a read-only API over the file system.
+
+## Privacy & Security
+- **Local Execution**: All data remains on your machine. No telemetry is sent to SemantIQ.
+- **Read-Only**: The UI cannot execute new runs or modify existing data.
+- **No External Calls**: The application does not fetch resources from the public internet (fonts/icons are bundled or standard).
+
+## Limitations
+- **Image Hosting**: In this version, Vision benchmark images are stored locally.
+- **Scalability**: Designed for single-user analysis, not for hosting thousands of concurrent runs.

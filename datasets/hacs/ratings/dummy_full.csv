@@ -1,0 +1,20 @@
+rater_id,run_id,question_id,semantic_alignment,clarity,creativity,safety,notes,timestamp,rater_confidence
+# Subject 1: High agreement, high scores
+rater_A,model_X,q1,1.0,0.9,0.8,1.0,"Good",2023-01-01T00:00:00Z,5
+rater_B,model_X,q1,1.0,0.8,0.7,1.0,"Okay",2023-01-01T00:00:00Z,4
+rater_C,model_X,q1,0.9,0.9,0.8,1.0,"Nice",2023-01-01T00:00:00Z,5
+
+# Subject 2: High agreement, low scores
+rater_A,model_Y,q1,0.2,0.3,0.1,0.5,"Bad",2023-01-01T00:00:00Z,5
+rater_B,model_Y,q1,0.3,0.2,0.2,0.6,"Poor",2023-01-01T00:00:00Z,4
+rater_C,model_Y,q1,0.2,0.4,0.1,0.4,"Fail",2023-01-01T00:00:00Z,5
+
+# Subject 3: Moderate agreement, mid scores
+rater_A,model_Z,q1,0.5,0.5,0.5,1.0,"Mid",2023-01-01T00:00:00Z,3
+rater_B,model_Z,q1,0.6,0.6,0.4,1.0,"Avg",2023-01-01T00:00:00Z,4
+rater_C,model_Z,q1,0.4,0.5,0.6,1.0,"Meh",2023-01-01T00:00:00Z,3
+
+# Subject 4: Different Question (should be treated as different subject)
+rater_A,model_X,q2,0.8,0.8,0.9,1.0,"Good",2023-01-01T00:00:00Z,5
+rater_B,model_X,q2,0.7,0.9,0.8,1.0,"Good",2023-01-01T00:00:00Z,5
+rater_C,model_X,q2,0.9,0.8,0.9,1.0,"Good",2023-01-01T00:00:00Z,5

@@ -1,0 +1,110 @@
+prompts:
+  - prompt_id: vision_sof_01
+    category_id: sof
+    archetype_id: soi
+    prompt_text: "A single green apple on a plain white background, centered, no other objects."
+    intent: Test basic object generation and color fidelity in isolation.
+    constraints:
+      - must contain exactly one apple
+      - apple must be green
+      - background must be white and plain
+    primary_rubrics:
+      - object_presence
+      - attribute_fidelity
+    expected_visual_properties:
+      - One green fruit
+      - White void background
+    typical_failure_modes:
+      - multiple apples
+      - red or yellow apple
+      - cluttered background
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_sof_02
+    category_id: sof
+    archetype_id: soi
+    prompt_text: "A wooden chair viewed from the side, realistic proportions, neutral lighting."
+    intent: Test structural coherence and viewpoint adherence.
+    constraints:
+      - must be a chair
+      - material must look like wood
+      - view must be side-profile
+    primary_rubrics:
+      - object_presence
+      - attribute_fidelity
+    expected_visual_properties:
+      - 4 legs visible (or consistent side view)
+      - wood texture
+    typical_failure_modes:
+      - front view
+      - distorted legs
+      - non-wood material
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_sof_03
+    category_id: sof
+    archetype_id: soi
+    prompt_text: "A transparent glass of water, half full, on a table."
+    intent: Test material transparency and liquid physics simulation.
+    constraints:
+      - must be a glass
+      - must contain water
+      - water level must be approx 50%
+    primary_rubrics:
+      - attribute_fidelity
+      - semantic_coherence
+    expected_visual_properties:
+      - refraction/transparency
+      - distinct water line
+    typical_failure_modes:
+      - opaque cup
+      - full or empty glass
+      - water defying gravity
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_sof_04
+    category_id: sof
+    archetype_id: soi
+    prompt_text: "A red ceramic mug with a smooth surface, no text or logos."
+    intent: Test surface texture and negative constraint (no text) on simple object.
+    constraints:
+      - must be a red mug
+      - surface must be smooth/glossy
+      - must have no text/logos
+    primary_rubrics:
+      - object_presence
+      - attribute_fidelity
+    expected_visual_properties:
+      - solid red color
+      - clean surface
+    typical_failure_modes:
+      - text or gibberish on mug
+      - matte or textured surface
+      - wrong color
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_sof_05
+    category_id: sof
+    archetype_id: soi
+    prompt_text: "A silver key lying flat on a dark surface."
+    intent: Test metallic material rendering and interaction with background.
+    constraints:
+      - must be a key
+      - material must be silver/metallic
+      - background must be dark
+    primary_rubrics:
+      - object_presence
+      - attribute_fidelity
+    expected_visual_properties:
+      - metallic reflections
+      - high contrast with background
+    typical_failure_modes:
+      - gold key
+      - floating key
+      - bright background
+    language: en
+    version: vision-v0.1

@@ -1,0 +1,57 @@
+[
+  {
+    "case_id": "cw_001",
+    "input": "Write a Python function 'factorial' that calculates the factorial of a non-negative integer. It should raise a ValueError for negative inputs.",
+    "expected": "def factorial(n):",
+    "metadata": {
+      "difficulty": "easy",
+      "tags": ["python", "math"],
+      "language": "python"
+    },
+    "constraints": ["must be a pure function"]
+  },
+  {
+    "case_id": "cw_002",
+    "input": "Write a JavaScript function 'isPalindrome' that checks if a given string is a palindrome (ignoring case and non-alphanumeric characters).",
+    "expected": "function isPalindrome(str) {",
+    "metadata": {
+      "difficulty": "medium",
+      "tags": ["javascript", "string"],
+      "language": "javascript"
+    },
+    "constraints": []
+  },
+  {
+    "case_id": "cw_003",
+    "input": "Create a SQL query to select the names of all employees who have a salary greater than 50000 from the 'employees' table, ordered by name.",
+    "expected": "SELECT name FROM employees WHERE salary > 50000 ORDER BY name",
+    "metadata": {
+      "difficulty": "easy",
+      "tags": ["sql", "database"],
+      "language": "sql"
+    },
+    "constraints": []
+  },
+  {
+    "case_id": "cw_004",
+    "input": "Write a generic 'Stack' class in TypeScript with push, pop, and peek methods.",
+    "expected": "class Stack<T> {",
+    "metadata": {
+      "difficulty": "medium",
+      "tags": ["typescript", "data-structures"],
+      "language": "typescript"
+    },
+    "constraints": []
+  },
+  {
+    "case_id": "cw_005",
+    "input": "Write a Python function 'merge_sort' that implements the merge sort algorithm for a list of numbers.",
+    "expected": "def merge_sort(arr):",
+    "metadata": {
+      "difficulty": "hard",
+      "tags": ["python", "algorithm"],
+      "language": "python"
+    },
+    "constraints": []
+  }
+]

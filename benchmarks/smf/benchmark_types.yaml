@@ -1,0 +1,75 @@
+- type_id: qbe
+  name: Question-Based Evaluation
+  description: Direct questions or tasks focused on explicit answer quality.
+  typical_output_format: short
+  evaluation_style: rule-based
+  risk_profile:
+    - prompt_overfitting
+    - memorization
+  allowed_prompt_structure:
+    - system
+    - user
+    - constraints
+
+- type_id: ce
+  name: Contrastive Evaluation
+  description: Comparison of outputs from multiple related inputs to measure stability and differentiation.
+  typical_output_format: mixed
+  evaluation_style: heuristic
+  risk_profile:
+    - semantic_drift
+    - inconsistent_logic
+  allowed_prompt_structure:
+    - system
+    - user_variant_a
+    - user_variant_b
+
+- type_id: crt
+  name: Context Reconstruction Tasks
+  description: Tasks involving fragmented or implicit contexts requiring internal state maintenance.
+  typical_output_format: structured
+  evaluation_style: heuristic
+  risk_profile:
+    - context_leakage
+    - catastrophic_forgetting
+  allowed_prompt_structure:
+    - system
+    - context_history
+    - user
+
+- type_id: lfg
+  name: Long-Form Generation Tasks
+  description: Production of extended, structured artifacts to test coherence over time.
+  typical_output_format: long
+  evaluation_style: heuristic
+  risk_profile:
+    - repetition
+    - loss_of_coherence
+  allowed_prompt_structure:
+    - system
+    - user_brief
+    - constraints
+
+- type_id: rmt
+  name: Reflexive & Meta-Cognitive Tasks
+  description: Tasks requiring the model to assess its own knowledge, uncertainty, or boundaries.
+  typical_output_format: short
+  evaluation_style: rule-based
+  risk_profile:
+    - sycophancy
+    - fake_humility
+  allowed_prompt_structure:
+    - system
+    - user
+
+- type_id: sbt
+  name: Stress & Boundary Tasks
+  description: Edge cases, dilemmas, and adversarial inputs without clear "right" answers.
+  typical_output_format: mixed
+  evaluation_style: integrative
+  risk_profile:
+    - jailbreak_susceptibility
+    - refusal_triggering
+  allowed_prompt_structure:
+    - system
+    - adversarial_user

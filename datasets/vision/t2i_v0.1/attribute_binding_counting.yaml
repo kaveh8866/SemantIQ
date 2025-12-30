@@ -1,0 +1,103 @@
+prompts:
+  - prompt_id: vision_abc_01
+    category_id: abc
+    archetype_id: abc
+    prompt_text: "Three balls: one red, one blue, and one green, all different sizes."
+    intent: Test exact count (3) and distinct attribute assignment.
+    constraints:
+      - count must be exactly 3
+      - colors must be red, blue, green
+      - sizes must vary
+    primary_rubrics:
+      - count_accuracy
+      - attribute_binding_precision
+    expected_visual_properties:
+      - 3 distinct spheres
+      - no color mixing
+    typical_failure_modes:
+      - 4 balls
+      - duplicate colors
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_abc_02
+    category_id: abc
+    archetype_id: abc
+    prompt_text: "Two cups: the taller one is black, the shorter one is white."
+    intent: Test relative attribute binding (size + color).
+    constraints:
+      - count must be exactly 2
+      - black cup > white cup (height)
+    primary_rubrics:
+      - attribute_binding_precision
+      - relative_orientation
+    expected_visual_properties:
+      - distinct height difference
+      - correct color-height mapping
+    typical_failure_modes:
+      - tall white cup
+      - same size
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_abc_03
+    category_id: abc
+    archetype_id: abc
+    prompt_text: "Four apples on a table, exactly two of them are green."
+    intent: Test subset attribute assignment within a group.
+    constraints:
+      - total count 4
+      - green count 2
+      - implied other colors (red/yellow)
+    primary_rubrics:
+      - count_accuracy
+      - attribute_binding_precision
+    expected_visual_properties:
+      - 4 distinct fruits
+      - clear color split
+    typical_failure_modes:
+      - all green
+      - wrong total count
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_abc_04
+    category_id: abc
+    archetype_id: abc
+    prompt_text: "A striped shirt hanging next to a plain shirt."
+    intent: Test pattern attribute binding.
+    constraints:
+      - one shirt striped
+      - one shirt plain
+      - side by side
+    primary_rubrics:
+      - attribute_binding_precision
+      - object_distinctness
+    expected_visual_properties:
+      - pattern limited to one object
+      - no pattern bleeding
+    typical_failure_modes:
+      - both striped
+      - both plain
+    language: en
+    version: vision-v0.1
+
+  - prompt_id: vision_abc_05
+    category_id: abc
+    archetype_id: abc
+    prompt_text: "A small dog and a large dog standing next to each other."
+    intent: Test size attribute binding on animate objects.
+    constraints:
+      - two dogs
+      - distinct size difference
+    primary_rubrics:
+      - attribute_binding_precision
+      - semantic_coherence
+    expected_visual_properties:
+      - one clearly larger
+      - same species/type generally
+    typical_failure_modes:
+      - same size
+      - puppy vs adult (acceptable if size differs)
+    language: en
+    version: vision-v0.1

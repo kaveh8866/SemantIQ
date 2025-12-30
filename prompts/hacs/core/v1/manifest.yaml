@@ -1,0 +1,17 @@
+template_id: hacs_core_v1
+benchmark: HACS
+version: "1.0"
+intended_modules: [h1, h2, h3, h4, h5]
+required_question_fields:
+  - question_text
+  - constraints
+forbidden_content:
+  - scoring hints
+  - evaluation language
+  - module names
+rendering_notes:
+  - Preserve wording exactly
+  - Do not reorder sections
+safety_notes:
+  - No psychological pressure
+  - No deceptive framing

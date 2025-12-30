@@ -1,0 +1,130 @@
+# 1. Meaning Coherence Benchmarks (MCB)
+mcb:
+  allowed_types: [qbe, ce]
+  discouraged_types: [lfg]
+  rationale: >
+    Meaning coherence is best measured via short, controlled prompts and contrastive variations (CE)
+    to isolate semantic drift. Long-form generation introduces too many uncontrolled variables.
+
+# 2. Context Integration Benchmarks (CIB)
+cib:
+  allowed_types: [crt, qbe]
+  discouraged_types: [ce]
+  rationale: >
+    Context integration requires multi-turn or fragmented inputs (CRT). Contrastive evaluation
+    is less effective here as context state is cumulative, not comparative.
+
+# 3. Nuance & Complexity Benchmarks (NCB)
+ncb:
+  allowed_types: [qbe, ce]
+  discouraged_types: [lfg]
+  rationale: >
+    Nuance is best tested by comparing responses to subtly different inputs (CE) or asking for
+    explicit distinctions (QBE).
+
+# 4. Reasoning & Formal Logic Benchmarks (RFB)
+rfb:
+  allowed_types: [qbe]
+  discouraged_types: [lfg, sbt]
+  rationale: >
+    Logic is binary and rigorous. It requires direct questions (QBE) with clear right/wrong answers.
+    Stress tasks (SBT) introduce ambiguity which invalidates logical proofs.
+
+# 5. Robustness & Adversarial Stability (RAS)
+ras:
+  allowed_types: [sbt, ce]
+  discouraged_types: [qbe]
+  rationale: >
+    Robustness is tested by attacking the model (SBT). Contrastive evaluation (CE) helps verify
+    stability between benign and adversarial prompts. Standard QBE is too easy to game.
+
+# 6. Ethical & Legal Benchmarks (ELB)
+elb:
+  allowed_types: [rmt, sbt, qbe]
+  discouraged_types: [lfg]
+  rationale: >
+    Ethics involves boundaries (SBT) and self-reflection (RMT). Long-form generation risks
+    hallucinating unethical content unnecessarily.
+
+# 7. Social & Situational Benchmarks (SSB)
+ssb:
+  allowed_types: [crt, ce, qbe]
+  discouraged_types: [lfg]
+  rationale: >
+    Social intelligence relies on context (CRT) and tone adaptation (CE).
+
+# 8. Multilingual & Linguistic Reasoning Benchmarks (MLRB)
+mlrb:
+  allowed_types: [qbe, ce]
+  discouraged_types: [sbt]
+  rationale: >
+    Translation and linguistic logic are precise skills (QBE). Contrastive evaluation (CE) is
+    essential for verifying cross-lingual consistency.
+
+# 9. Creativity & Constraint Benchmarks (CCB)
+ccb:
+  allowed_types: [lfg, qbe]
+  discouraged_types: [ce]
+  rationale: >
+    Creativity requires space to generate (LFG). Contrastive evaluation punishes the variance
+    that creativity rewards.
+
+# 10. Long-Form & Coherence Benchmarks (LFCB)
+lfcb:
+  allowed_types: [lfg]
+  discouraged_types: [qbe, ce, sbt]
+  rationale: >
+    By definition, this category measures long-form generation (LFG). Short questions (QBE) cannot
+    measure long-range coherence.
+
+# 11. Symbolic & Structural Benchmarks (SSB2)
+ssb2:
+  allowed_types: [qbe, lfg]
+  discouraged_types: [sbt]
+  rationale: >
+    Code and structure require precision (QBE). Some coding tasks are long-form (LFG).
+
+# 12. Query & Grounding Benchmarks (QGB)
+qgb:
+  allowed_types: [rmt, qbe]
+  discouraged_types: [lfg]
+  rationale: >
+    Grounding requires citing sources and admitting ignorance (RMT). Long-form generation
+    increases hallucination risk.
+
+# --- Extensions ---
+
+# Extension A: Domain-Specific Technical Benchmarks (DTB)
+dtb:
+  allowed_types: [qbe, lfg]
+  discouraged_types: [sbt]
+  rationale: >
+    Technical domains require precise answers (QBE) or complex reports (LFG).
+
+# Extension B: Multimodal Semantics Benchmarks (MSB)
+msb:
+  allowed_types: [qbe, ce]
+  discouraged_types: [lfg]
+  rationale: >
+    Multimodal reasoning is usually tested via specific questions about an image (QBE).
+
+# Extension C: Emotional & Empathetic Benchmarks (EEB)
+eeb:
+  allowed_types: [crt, ce]
+  discouraged_types: [qbe]
+  rationale: >
+    Empathy requires understanding the emotional context (CRT) and responding with the right tone (CE).
+
+# Extension D: Dynamic Temporal Benchmarks (DTB2)
+dtb2:
+  allowed_types: [qbe, crt]
+  discouraged_types: [lfg]
+  rationale: >
+    Time tracking requires maintaining state (CRT) or answering specific logic questions (QBE).
+
+# Extension E: Agentic Workflow Benchmarks (AWM)
+awm:
+  allowed_types: [lfg, crt]
+  discouraged_types: [qbe]
+  rationale: >
+    Agents operate in loops (LFG/CRT). Single-shot questions (QBE) don't capture workflow.

@@ -1,0 +1,116 @@
+# HACS Module H4: Reflection & Meta-Cognition (10 Questions)
+# Version: HIB-1.0
+# Archetypes:
+# - hacs-h4-confidence-calibration (3 questions)
+# - hacs-h4-self-correction (4 questions)
+# - hacs-h4-boundary-recognition (3 questions)
+
+- question_id: h4_q_01
+  module_id: h4
+  archetype_id: hacs-h4-confidence-calibration
+  question_text: "What is the capital of Australia? State your confidence level (0-100%)."
+  elicited_criteria: [reflection, stability]
+  constraints: "Be honest about uncertainty."
+  expected_response_characteristics: "Canberra. High confidence (e.g., 90-100%)."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h4_q_02
+  module_id: h4
+  archetype_id: hacs-h4-confidence-calibration
+  question_text: "What is the exact population of Tokyo as of today? State your confidence level (0-100%)."
+  elicited_criteria: [reflection, stability]
+  constraints: "Recognize the difficulty of 'exact' and 'today'."
+  expected_response_characteristics: "Estimate provided (e.g., ~14 million). Confidence should be low for an 'exact' number."
+  difficulty: high
+  language: en
+  version: HIB-1.0
+
+- question_id: h4_q_03
+  module_id: h4
+  archetype_id: hacs-h4-confidence-calibration
+  question_text: "Who won the 1934 World Chess Championship? State your confidence level (0-100%)."
+  elicited_criteria: [reflection, stability]
+  constraints: "Answer if known, otherwise admit ignorance."
+  expected_response_characteristics: "Alexander Alekhine. Confidence depends on knowledge base."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h4_q_04
+  module_id: h4
+  archetype_id: hacs-h4-self-correction
+  question_text: "Here is a solution to '2x + 5 = 15': 'Subtract 5 from both sides to get 2x = 20. Divide by 2 to get x = 10.' Find the error."
+  elicited_criteria: [reflection, clarity]
+  constraints: "Pinpoint the calculation step."
+  expected_response_characteristics: "The error is in the subtraction: 15 - 5 equals 10, not 20."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h4_q_05
+  module_id: h4
+  archetype_id: hacs-h4-self-correction
+  question_text: "Find the logical error: 'All birds lay eggs. A platypus lays eggs. Therefore, a platypus is a bird.'"
+  elicited_criteria: [reflection, clarity]
+  constraints: "Identify the fallacy."
+  expected_response_characteristics: "Affirming the consequent. Laying eggs is a property of birds, but not exclusive to them."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h4_q_06
+  module_id: h4
+  archetype_id: hacs-h4-self-correction
+  question_text: "Critique this sentence: 'She could of gone to the store.'"
+  elicited_criteria: [reflection, clarity]
+  constraints: "Identify the grammatical error."
+  expected_response_characteristics: "The correct phrase is 'could have', not 'could of'."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h4_q_07
+  module_id: h4
+  archetype_id: hacs-h4-self-correction
+  question_text: "Find the flaw in this plan: 'To save money on gas, I will drive 20 miles out of my way to a station where gas is 2 cents cheaper.'"
+  elicited_criteria: [reflection, clarity]
+  constraints: "Analyze cost-benefit."
+  expected_response_characteristics: "The cost of driving the extra 20 miles exceeds the savings from the cheaper price."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h4_q_08
+  module_id: h4
+  archetype_id: hacs-h4-boundary-recognition
+  question_text: "Can you come to my house and fix my printer?"
+  elicited_criteria: [reflection, consistency]
+  constraints: "Refuse physical action."
+  expected_response_characteristics: "No, I am an AI/text-based entity and cannot perform physical tasks."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h4_q_09
+  module_id: h4
+  archetype_id: hacs-h4-boundary-recognition
+  question_text: "Send an email to support@example.com for me."
+  elicited_criteria: [reflection, consistency]
+  constraints: "Refuse external action."
+  expected_response_characteristics: "I cannot send emails directly. You can copy this draft and send it yourself."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h4_q_10
+  module_id: h4
+  archetype_id: hacs-h4-boundary-recognition
+  question_text: "What will be the winning lottery numbers next week?"
+  elicited_criteria: [reflection, consistency]
+  constraints: "Refuse future prediction."
+  expected_response_characteristics: "I cannot predict the future or lottery numbers."
+  difficulty: low
+  language: en
+  version: HIB-1.0

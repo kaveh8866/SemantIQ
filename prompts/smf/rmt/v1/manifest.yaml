@@ -1,0 +1,8 @@
+template_id: rmt-v1-reflexive
+benchmark_type: rmt
+version: "1.0"
+intended_categories: ["rfb", "ras", "qgb"]
+required_question_fields: ["input"]
+forbidden_content: ["difficulty_level", "expected_answer", "scoring_criteria"]
+rendering_notes: "Designed to elicit meta-cognitive signals (uncertainty, refusal)."
+safety_notes: "May involve sensitive topics."

@@ -1,0 +1,83 @@
+questions:
+  - question_id: cib_q_001
+    category_id: cib
+    archetype_id: cib-01-context-recovery
+    benchmark_type: crt
+    prompt_intent: Recover context from a mid-conversation snippet.
+    input: >
+      "I told him to double the dosage, but he said the patient's BP was too low."
+      Who are the likely speakers, where are they, and what is the conflict?
+    constraints:
+      - Must identify medical setting.
+      - Must identify doctor/nurse dynamic.
+    expected_response_characteristics:
+      - Setting: Hospital/Clinic.
+      - Conflict: Medication safety vs efficacy.
+    difficulty: low
+    language: en
+    version: "1.0"
+
+  - question_id: cib_q_002
+    category_id: cib
+    archetype_id: cib-02-context-switching
+    benchmark_type: crt
+    prompt_intent: Switch from creative writing to technical analysis.
+    input: >
+      Task 1: Write a haiku about a server crash.
+      Task 2: Explain the RAID 5 parity calculation algorithm.
+    constraints:
+      - Task 2 must be purely technical, no poetic language.
+    expected_response_characteristics:
+      - Sharp tone shift from poetic to dry/technical.
+    difficulty: medium
+    language: en
+    version: "1.0"
+
+  - question_id: cib_q_003
+    category_id: cib
+    archetype_id: cib-03-implicit-instruction
+    benchmark_type: qbe
+    prompt_intent: Recognize implicit request for help.
+    input: >
+      "I've been staring at this error log for three hours and I can't find the null pointer."
+    constraints:
+      - Do not just say "That sucks".
+      - Offer debugging help or ask for the log.
+    expected_response_characteristics:
+      - Helpful, proactive response.
+    difficulty: low
+    language: en
+    version: "1.0"
+
+  - question_id: cib_q_004
+    category_id: cib
+    archetype_id: cib-01-context-recovery
+    benchmark_type: crt
+    prompt_intent: Infer context from business jargon.
+    input: >
+      "We need to pivot before the burn rate kills our runway."
+      What kind of company is this?
+    constraints:
+      - Must identify "Startup".
+    expected_response_characteristics:
+      - Context: Venture-backed startup / Tech business.
+    difficulty: low
+    language: en
+    version: "1.0"
+
+  - question_id: cib_q_005
+    category_id: cib
+    archetype_id: cib-02-context-switching
+    benchmark_type: crt
+    prompt_intent: Switch from supportive friend to critical editor.
+    input: >
+      Context A: Your friend is sad about a rejection. Comfort them.
+      Context B: You are an editor reviewing a manuscript. Critique the same rejection letter for clarity.
+    constraints:
+      - Context A: Empathetic.
+      - Context B: Analytical, objective.
+    expected_response_characteristics:
+      - Clear distinction in voice and intent.
+    difficulty: high
+    language: en
+    version: "1.0"

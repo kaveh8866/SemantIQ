@@ -1,0 +1,104 @@
+# SMF Scoring Strategy Mapping
+# Maps each category to appropriate scoring heuristics.
+
+# Scorer IDs:
+# - structural_consistency (A)
+# - semantic_stability (B)
+# - reflexivity_signals (C)
+# - responsibility_safety (D)
+
+mcb:
+  primary_scorers: ["semantic_stability"]
+  secondary_scorers: ["structural_consistency"]
+  excluded_scorers: ["responsibility_safety"]
+  rationale: "MCB tests meaning stability. Structural checks ensure format compliance."
+
+lfcb:
+  primary_scorers: ["structural_consistency"]
+  secondary_scorers: []
+  excluded_scorers: []
+  rationale: "Long-form coherence is primarily structural in MVP."
+
+ncb:
+  primary_scorers: ["structural_consistency"]
+  secondary_scorers: ["semantic_stability"]
+  excluded_scorers: []
+  rationale: "Nuance requires stability check."
+
+ssb:
+  primary_scorers: ["semantic_stability"]
+  secondary_scorers: []
+  excluded_scorers: []
+  rationale: "Style stability is key."
+
+ccb:
+  primary_scorers: ["semantic_stability"]
+  secondary_scorers: []
+  excluded_scorers: []
+  rationale: "Cross-context requires stability check."
+
+rfb:
+  primary_scorers: ["reflexivity_signals"]
+  secondary_scorers: []
+  excluded_scorers: []
+  rationale: "Reflexivity requires detecting uncertainty markers."
+
+ras:
+  primary_scorers: ["reflexivity_signals", "responsibility_safety"]
+  secondary_scorers: []
+  excluded_scorers: []
+  rationale: "Risk awareness involves both reflexivity and safety signals."
+
+qgb:
+  primary_scorers: ["reflexivity_signals"]
+  secondary_scorers: ["structural_consistency"]
+  excluded_scorers: []
+  rationale: "Quality gap often manifests as hallucination (reflexivity needed)."
+
+msb:
+  primary_scorers: ["responsibility_safety"]
+  secondary_scorers: ["structural_consistency"]
+  excluded_scorers: []
+  rationale: "Modal safety requires safety checks."
+
+cib:
+  primary_scorers: ["semantic_stability"]
+  secondary_scorers: []
+  excluded_scorers: []
+  rationale: "Cross-lingual stability."
+
+dtb:
+  primary_scorers: ["structural_consistency"]
+  secondary_scorers: []
+  excluded_scorers: []
+  rationale: "Domain transfer should maintain structure."
+
+elb:
+  primary_scorers: ["responsibility_safety"]
+  secondary_scorers: ["reflexivity_signals"]
+  excluded_scorers: []
+  rationale: "Ethical limits require safety signals."
+
+mlrb:
+  primary_scorers: ["structural_consistency"]
+  secondary_scorers: []
+  excluded_scorers: []
+  rationale: "Reasoning chains require structure."
+
+awm:
+  primary_scorers: ["structural_consistency"]
+  secondary_scorers: []
+  excluded_scorers: []
+  rationale: "Workflow requires strict step structure."
+
+ssb2:
+  primary_scorers: ["semantic_stability"]
+  secondary_scorers: []
+  excluded_scorers: []
+  rationale: "Style stability v2."
+
+dtb2:
+  primary_scorers: ["structural_consistency"]
+  secondary_scorers: []
+  excluded_scorers: []
+  rationale: "Temporal reasoning structure."

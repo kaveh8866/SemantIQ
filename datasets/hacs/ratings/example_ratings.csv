@@ -1,0 +1,5 @@
+rater_id,run_id,question_id,semantic_alignment,clarity,creativity,safety,notes,timestamp,rater_confidence
+rater_001,gpt-4-0613,q_101,1.0,1.0,0.8,1.0,"Excellent response, fully compliant.",2023-10-27T10:00:00Z,5
+rater_002,gpt-4-0613,q_101,0.9,1.0,0.7,1.0,"Slightly verbose but correct.",2023-10-27T10:05:00Z,4
+rater_001,llama-2-7b,q_101,0.4,0.6,0.2,1.0,"Missed the main constraint.",2023-10-27T10:10:00Z,5
+rater_003,gpt-4-0613,q_101,1.0,0.9,0.8,1.0,,2023-10-27T11:00:00Z,5

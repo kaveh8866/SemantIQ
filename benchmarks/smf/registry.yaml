@@ -1,0 +1,309 @@
+smf_version: "1.1"
+framework_name: "Semantic Maturity Framework"
+
+categories:
+  # 1. Meaning Coherence Benchmarks (MCB)
+  - category_id: mcb
+    name: Meaning Coherence Benchmarks
+    description: >
+      Measures stability and internal consistency of meaning across variations.
+      Evaluates whether the model maintains semantic integrity when inputs are rephrased,
+      structured differently, or subjected to minor perturbations.
+    measured_capability: semantic coherence
+    maturity_focus: semantic
+    benchmark_type: qualitative
+    extension: false
+    subdimensions:
+      - definition_coherence
+      - ambiguity_stability
+      - semantic_relations
+      - repetition_consistency
+      - abstraction_stability
+      - meaning_differentiation
+      - semantic_purity
+
+  # 2. Context Integration Benchmarks (CIB)
+  - category_id: cib
+    name: Context Integration Benchmarks
+    description: >
+      Evaluates the model's ability to maintain, integrate, and switch contexts effectively.
+      Focuses on dynamic context handling, implicit context recognition, and cross-turn consistency.
+    measured_capability: context handling
+    maturity_focus: cognitive
+    benchmark_type: integrative
+    extension: false
+    subdimensions:
+      - context_retention
+      - context_switching
+      - implicit_context_recognition
+      - cross_turn_consistency
+      - context_contamination_resistance
+      - relevant_context_extraction
+
+  # 3. Nuance & Complexity Benchmarks (NCB)
+  - category_id: ncb
+    name: Nuance & Complexity Benchmarks
+    description: >
+      Tests the ability to distinguish subtle differences in meaning, tone, and intent.
+      Assesses performance on complex instructions with multiple constraints and subtext.
+    measured_capability: nuance detection
+    maturity_focus: semantic
+    benchmark_type: qualitative
+    extension: false
+    subdimensions:
+      - nuance_recognition
+      - subtext_detection
+      - complexity_handling
+      - tonal_subtlety
+      - constraint_layering
+      - irony_sarcasm_detection
+
+  # 4. Reasoning & Formal Logic Benchmarks (RFB)
+  - category_id: rfb
+    name: Reasoning & Formal Logic Benchmarks
+    description: >
+      Measures strict logical reasoning capabilities, including deductive, inductive, and abductive reasoning.
+      Evaluates fallacy detection and formal logic application.
+    measured_capability: logical reasoning
+    maturity_focus: cognitive
+    benchmark_type: semi-quantitative
+    extension: false
+    subdimensions:
+      - deductive_reasoning
+      - inductive_reasoning
+      - abductive_reasoning
+      - fallacy_detection
+      - formal_logic_application
+      - chain_of_thought_consistency
+      - counterfactual_reasoning
+
+  # 5. Robustness & Adversarial Stability (RAS)
+  - category_id: ras
+    name: Robustness & Adversarial Stability
+    description: >
+      Evaluates resilience against adversarial attacks, prompt injection, and input noise.
+      Ensures model stability under stress and non-standard inputs.
+    measured_capability: adversarial robustness
+    maturity_focus: ethical
+    benchmark_type: integrative
+    extension: false
+    subdimensions:
+      - injection_resistance
+      - jailbreak_detection
+      - noise_tolerance
+      - edge_case_stability
+      - adversarial_perturbation
+      - output_format_enforcement
+
+  # 6. Ethical & Legal Benchmarks (ELB)
+  - category_id: elb
+    name: Ethical & Legal Benchmarks
+    description: >
+      Assess alignment with ethical guidelines, bias mitigation, and legal compliance.
+      Focuses on safety, fairness, and refusal of harmful requests.
+    measured_capability: ethical alignment
+    maturity_focus: ethical
+    benchmark_type: qualitative
+    extension: false
+    subdimensions:
+      - bias_detection_mitigation
+      - safety_alignment
+      - legal_compliance_check
+      - harmful_content_refusal
+      - privacy_protection
+      - intellectual_property_respect
+
+  # 7. Social & Situational Benchmarks (SSB)
+  - category_id: ssb
+    name: Social & Situational Benchmarks
+    description: >
+      Measures social intelligence, cultural awareness, and situational appropriateness.
+      Evaluates role-playing fidelity and tone adaptation to different audiences.
+    measured_capability: social intelligence
+    maturity_focus: integrative
+    benchmark_type: qualitative
+    extension: false
+    subdimensions:
+      - cultural_awareness
+      - situational_appropriateness
+      - role_consistency
+      - tone_adaptation
+      - social_norm_adherence
+      - audience_calibration
+
+  # 8. Multilingual & Linguistic Reasoning Benchmarks (MLRB)
+  - category_id: mlrb
+    name: Multilingual & Linguistic Reasoning Benchmarks
+    description: >
+      Tests capabilities across languages and linguistic structures.
+      Includes translation accuracy, idiom handling, and grammar stability in diverse languages.
+    measured_capability: multilingualism
+    maturity_focus: semantic
+    benchmark_type: semi-quantitative
+    extension: false
+    subdimensions:
+      - cross_lingual_consistency
+      - idiom_translation
+      - grammar_stability
+      - low_resource_language_handling
+      - code_switching_handling
+      - cultural_nuance_translation
+
+  # 9. Creativity & Constraint Benchmarks (CCB)
+  - category_id: ccb
+    name: Creativity & Constraint Benchmarks
+    description: >
+      Evaluates creative generation capabilities within strict constraints.
+      Measures novelty, style transfer, and adherence to complex creative briefs.
+    measured_capability: creative generation
+    maturity_focus: integrative
+    benchmark_type: qualitative
+    extension: false
+    subdimensions:
+      - constrained_creativity
+      - style_transfer
+      - novelty_generation
+      - genre_adaptation
+      - metaphor_analogy_generation
+      - divergent_thinking
+
+  # 10. Long-Form & Coherence Benchmarks (LFCB)
+  - category_id: lfcb
+    name: Long-Form & Coherence Benchmarks
+    description: >
+      Tests the ability to generate and maintain coherence over long contexts.
+      Focuses on narrative structure, argument flow, and long-range dependency tracking.
+    measured_capability: long-context coherence
+    maturity_focus: cognitive
+    benchmark_type: qualitative
+    extension: false
+    subdimensions:
+      - narrative_consistency
+      - argument_structure
+      - long_context_recall
+      - thematic_unity
+      - global_coherence
+      - reference_resolution
+
+  # 11. Symbolic & Structural Benchmarks (SSB2)
+  - category_id: ssb2
+    name: Symbolic & Structural Benchmarks
+    description: >
+      Measures the ability to manipulate symbols, code, and structured data formats.
+      Evaluates syntactic correctness and structural transformation capabilities.
+    measured_capability: symbolic manipulation
+    maturity_focus: cognitive
+    benchmark_type: semi-quantitative
+    extension: false
+    subdimensions:
+      - syntax_validation
+      - format_transformation
+      - symbolic_logic
+      - code_structure_integrity
+      - schema_adherence
+      - mathematical_notation_handling
+
+  # 12. Query & Grounding Benchmarks (QGB)
+  - category_id: qgb
+    name: Query & Grounding Benchmarks
+    description: >
+      Evaluates the model's ability to ground responses in provided facts or external knowledge.
+      Tests for hallucination resistance and citation accuracy.
+    measured_capability: knowledge grounding
+    maturity_focus: integrative
+    benchmark_type: semi-quantitative
+    extension: false
+    subdimensions:
+      - fact_checking
+      - hallucination_resistance
+      - source_attribution
+      - retrieval_augmented_generation_fidelity
+      - temporal_fact_accuracy
+      - knowledge_boundary_recognition
+
+  # --- Extensions ---
+
+  # Extension A: Domain-Specific Technical Benchmarks (DTB)
+  - category_id: dtb
+    name: Domain-Specific Technical Benchmarks
+    description: >
+      Specialized benchmarks for vertical domains like medicine, law, or engineering.
+      Tests deep technical knowledge and domain-specific reasoning.
+    measured_capability: domain expertise
+    maturity_focus: cognitive
+    benchmark_type: semi-quantitative
+    extension: true
+    subdimensions:
+      - medical_reasoning
+      - legal_reasoning
+      - engineering_specs
+      - financial_analysis
+      - scientific_literature_comprehension
+
+  # Extension B: Multimodal Semantics Benchmarks (MSB)
+  - category_id: msb
+    name: Multimodal Semantics Benchmarks
+    description: >
+      Evaluates semantic understanding across modalities (image-to-text, text-to-image).
+      Measures cross-modal consistency and visual reasoning.
+    measured_capability: multimodal reasoning
+    maturity_focus: integrative
+    benchmark_type: qualitative
+    extension: true
+    subdimensions:
+      - visual_reasoning
+      - image_captioning_accuracy
+      - cross_modal_consistency
+      - spatial_reasoning
+      - chart_graph_interpretation
+
+  # Extension C: Emotional & Empathetic Benchmarks (EEB)
+  - category_id: eeb
+    name: Emotional & Empathetic Benchmarks
+    description: >
+      Measures emotional intelligence depth, empathy simulation, and emotional regulation.
+      Focuses on support scenarios and complex emotional dynamics.
+    measured_capability: emotional intelligence
+    maturity_focus: ethical
+    benchmark_type: qualitative
+    extension: true
+    subdimensions:
+      - empathy_simulation
+      - emotional_regulation
+      - support_response_quality
+      - emotional_nuance_detection
+      - crisis_deescalation
+
+  # Extension D: Dynamic Temporal Benchmarks (DTB2)
+  - category_id: dtb2
+    name: Dynamic Temporal Benchmarks
+    description: >
+      Tests understanding of time, causality, and changing world states.
+      Evaluates temporal reasoning and handling of time-sensitive information.
+    measured_capability: temporal reasoning
+    maturity_focus: cognitive
+    benchmark_type: semi-quantitative
+    extension: true
+    subdimensions:
+      - temporal_ordering
+      - causality_tracking
+      - future_forecasting
+      - historical_reasoning
+      - time_duration_estimation
+
+  # Extension E: Agentic Workflow Benchmarks (AWM)
+  - category_id: awm
+    name: Agentic Workflow Benchmarks
+    description: >
+      Evaluates the ability to plan, execute, and monitor multi-step workflows.
+      Tests tool usage, autonomy, and error recovery in agentic scenarios.
+    measured_capability: agentic capability
+    maturity_focus: integrative
+    benchmark_type: integrative
+    extension: true
+    subdimensions:
+      - planning_decomposition
+      - tool_use_efficacy
+      - self_correction
+      - multi_step_execution
+      - environment_interaction

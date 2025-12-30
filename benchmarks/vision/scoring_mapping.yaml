@@ -1,0 +1,83 @@
+# Mapping of Categories to Canonical Rubrics
+scoring_mapping_version: "0.1"
+mappings:
+  sof:
+    category_id: sof
+    primary_rubrics:
+      - object_presence
+      - attribute_fidelity
+      - semantic_coherence
+      - constraint_adherence
+    secondary_rubrics: []
+    excluded_rubrics:
+      - counting_accuracy
+      - relation_correctness
+    rationale: >
+      Focuses on the fidelity of a single object. Complex relations or counts are out of scope.
+
+  moc:
+    category_id: moc
+    primary_rubrics:
+      - object_presence
+      - compositional_accuracy
+      - object_count
+      - semantic_coherence
+    secondary_rubrics:
+      - attribute_fidelity
+    excluded_rubrics: []
+    rationale: >
+      Evaluates ability to compose multiple distinct objects.
+
+  spr:
+    category_id: spr
+    primary_rubrics:
+      - spatial_consistency
+      - relation_correctness
+      - object_presence
+      - constraint_adherence
+    secondary_rubrics:
+      - semantic_coherence
+    excluded_rubrics:
+      - style_consistency
+    rationale: >
+      Strictly evaluates spatial relationships and positioning.
+
+  abc:
+    category_id: abc
+    primary_rubrics:
+      - attribute_binding
+      - counting_accuracy
+      - object_presence
+      - constraint_adherence
+    secondary_rubrics:
+      - attribute_fidelity
+    excluded_rubrics: []
+    rationale: >
+      Testing the "binding problem" and exact counting capabilities.
+
+  nex:
+    category_id: nex
+    primary_rubrics:
+      - negation_handling
+      - object_presence
+      - constraint_adherence
+    secondary_rubrics:
+      - semantic_coherence
+    excluded_rubrics:
+      - counting_accuracy
+    rationale: >
+      Focuses on what is NOT in the image.
+
+  stb:
+    category_id: stb
+    primary_rubrics:
+      - style_consistency
+      - object_presence
+      - semantic_coherence
+    secondary_rubrics:
+      - attribute_fidelity
+    excluded_rubrics:
+      - spatial_consistency
+      - relation_correctness
+    rationale: >
+      Evaluates adherence to style constraints over semantic complexity.

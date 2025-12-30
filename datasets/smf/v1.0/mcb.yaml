@@ -1,0 +1,91 @@
+questions:
+  - question_id: mcb_q_001
+    category_id: mcb
+    archetype_id: mcb-02-definition-stability
+    benchmark_type: qbe
+    prompt_intent: >
+      Test whether the model maintains consistent meaning across rephrased definitions.
+    input: >
+      Provide a definition of "entropy" in the context of information theory, then restate the same definition
+      using completely different vocabulary without changing its core meaning.
+    constraints:
+      - Do not introduce concepts from thermodynamics.
+      - Do not change the scope of the definition.
+    expected_response_characteristics:
+      - Both definitions must describe uncertainty/information density.
+      - No semantic drift towards physical entropy.
+    difficulty: medium
+    language: en
+    version: "1.0"
+
+  - question_id: mcb_q_002
+    category_id: mcb
+    archetype_id: mcb-01-paraphrase-consistency
+    benchmark_type: ce
+    prompt_intent: >
+      Verify if the model interprets rephrased prompts as semantically equivalent.
+    input: >
+      Prompt A: "Explain the primary cause of the 2008 financial crisis in one sentence."
+      Prompt B: "What was the main trigger for the global economic collapse of 2008? Answer briefly."
+    constraints:
+      - Both answers must identify the same root cause (e.g., subprime mortgages/credit crunch).
+    expected_response_characteristics:
+      - Semantic equivalence of the identified cause.
+    difficulty: low
+    language: en
+    version: "1.0"
+
+  - question_id: mcb_q_003
+    category_id: mcb
+    archetype_id: mcb-03-negation-logic
+    benchmark_type: qbe
+    prompt_intent: >
+      Test if the model correctly handles negated constraints.
+    input: >
+      List three benefits of regular exercise, but do not mention weight loss or physical appearance.
+    constraints:
+      - Must list 3 benefits.
+      - Must NOT mention weight, fat, looks, or aesthetics.
+    expected_response_characteristics:
+      - Focus on mental health, cardiovascular health, longevity, etc.
+      - Strict adherence to negative constraints.
+    difficulty: medium
+    language: en
+    version: "1.0"
+
+  - question_id: mcb_q_004
+    category_id: mcb
+    archetype_id: mcb-02-definition-stability
+    benchmark_type: qbe
+    prompt_intent: >
+      Ensure the model's definition of "democracy" remains stable across contexts.
+    input: >
+      Define "democracy" first as a political scientist would, and then as a historian would.
+    constraints:
+      - The core mechanism (voting/people power) must remain central.
+    expected_response_characteristics:
+      - Scientist focus: institutions/processes.
+      - Historian focus: origins/evolution.
+      - Core semantic definition must not contradict.
+    difficulty: medium
+    language: en
+    version: "1.0"
+
+  - question_id: mcb_q_005
+    category_id: mcb
+    archetype_id: mcb-01-paraphrase-consistency
+    benchmark_type: ce
+    prompt_intent: >
+      Check for consistency in handling hypothetical scenarios.
+    input: >
+      Prompt A: "If it rains, the grass gets wet. It is raining. Is the grass wet?"
+      Prompt B: "The grass is dry. It rains whenever the sky is gray. The sky is gray. Is this consistent?"
+    constraints:
+      - Must identify the logical state correctly in both.
+    expected_response_characteristics:
+      - Prompt A: Yes.
+      - Prompt B: No (Contradiction).
+      - Logical consistency across variations.
+    difficulty: high
+    language: en
+    version: "1.0"

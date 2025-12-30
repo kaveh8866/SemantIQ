@@ -1,0 +1,18 @@
+[
+  {
+    "prompt_id": "vision_sof_01",
+    "prompt_hash": "38e6f3c680e451108fca91715fa03b96fca8b8012bc11d1dca69ac00ba5d1fe1",
+    "category_id": "sof",
+    "archetype_id": "soi",
+    "provider": "dummy_provider",
+    "model": "dummy-vision-v1",
+    "render_params": {
+      "width": 1024,
+      "height": 1024,
+      "num_images": 1
+    },
+    "seed_supported": false,
+    "warnings": [],
+    "timestamp": "2025-12-29T18:49:22.708687"
+  }
+]

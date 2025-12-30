@@ -1,0 +1,172 @@
+# HACS Module H1: Meaning & Context (15 Questions)
+# Version: HIB-1.0
+# Archetypes:
+# - hacs-h1-synonym-nuance (4 questions)
+# - hacs-h1-idiom-interpretation (4 questions)
+# - hacs-h1-ambiguity-resolution (4 questions)
+# - hacs-h1-register-shift (3 questions)
+
+- question_id: h1_q_01
+  module_id: h1
+  archetype_id: hacs-h1-synonym-nuance
+  question_text: "Explain the subtle difference between being 'stubborn' and being 'persistent' in a workplace context."
+  elicited_criteria: [clarity, depth]
+  constraints: "Keep the explanation under 100 words."
+  expected_response_characteristics: "Should highlight that stubbornness implies resistance to change (negative), while persistence implies continuing despite difficulty (positive)."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_02
+  module_id: h1
+  archetype_id: hacs-h1-synonym-nuance
+  question_text: "What is the difference between 'hearing' and 'listening' when interacting with a friend?"
+  elicited_criteria: [clarity, depth]
+  constraints: "Use simple language."
+  expected_response_characteristics: "Distinguish between the physical act (hearing) and the active cognitive process (listening)."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_03
+  module_id: h1
+  archetype_id: hacs-h1-synonym-nuance
+  question_text: "Compare 'knowledge' and 'wisdom'. How might someone have one but not the other?"
+  elicited_criteria: [clarity, depth]
+  constraints: "Provide a concrete example."
+  expected_response_characteristics: "Knowledge is facts/information; wisdom is the judicious application of knowledge."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_04
+  module_id: h1
+  archetype_id: hacs-h1-synonym-nuance
+  question_text: "Distinguish between a 'house' and a 'home'."
+  elicited_criteria: [clarity, depth]
+  constraints: "Focus on emotional connotations."
+  expected_response_characteristics: "House is the physical structure; home implies belonging, comfort, and personal connection."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_05
+  module_id: h1
+  archetype_id: hacs-h1-idiom-interpretation
+  question_text: "What does the phrase 'bite the bullet' imply when used in a situation where someone has to pay a large bill?"
+  elicited_criteria: [clarity, consistency]
+  constraints: "Do not explain the literal origin."
+  expected_response_characteristics: "It implies accepting a difficult or unpleasant reality with courage or resignation."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_06
+  module_id: h1
+  archetype_id: hacs-h1-idiom-interpretation
+  question_text: "If a project manager says a team needs to 'cut corners' to meet a deadline, what are they suggesting?"
+  elicited_criteria: [clarity, consistency]
+  constraints: "Address the potential negative implication."
+  expected_response_characteristics: "Suggests skipping steps or reducing quality to save time/money."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_07
+  module_id: h1
+  archetype_id: hacs-h1-idiom-interpretation
+  question_text: "What does it mean to 'play devil's advocate' during a brainstorming session?"
+  elicited_criteria: [clarity, consistency]
+  constraints: "Explain the purpose of the action."
+  expected_response_characteristics: "Arguing against a position to test its validity or provoke debate, not necessarily because one disagrees."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_08
+  module_id: h1
+  archetype_id: hacs-h1-idiom-interpretation
+  question_text: "Interpret the saying 'don't put all your eggs in one basket' in the context of investing."
+  elicited_criteria: [clarity, consistency]
+  constraints: "Use financial terms if appropriate."
+  expected_response_characteristics: "Refers to diversification; risk management by not concentrating resources in a single area."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_09
+  module_id: h1
+  archetype_id: hacs-h1-ambiguity-resolution
+  question_text: "The sentence 'I saw the man with the telescope' has two meanings. Explain both."
+  elicited_criteria: [clarity, reflection]
+  constraints: "Label them Meaning A and Meaning B."
+  expected_response_characteristics: "A: I used a telescope to see the man. B: I saw a man who was holding a telescope."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_10
+  module_id: h1
+  archetype_id: hacs-h1-ambiguity-resolution
+  question_text: "Explain the ambiguity in: 'Visiting relatives can be annoying.'"
+  elicited_criteria: [clarity, reflection]
+  constraints: "Identify the grammatical source of ambiguity if possible."
+  expected_response_characteristics: "1: The act of going to visit relatives is annoying. 2: Relatives who come to visit are annoying."
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_11
+  module_id: h1
+  archetype_id: hacs-h1-ambiguity-resolution
+  question_text: "Clarify the two interpretations of: 'The chicken is ready to eat.'"
+  elicited_criteria: [clarity, reflection]
+  constraints: "None."
+  expected_response_characteristics: "1: The cooked chicken is ready to be consumed. 2: The live chicken is ready to be fed."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_12
+  module_id: h1
+  archetype_id: hacs-h1-ambiguity-resolution
+  question_text: "What are the two meanings of 'She fed her dog biscuits'?"
+  elicited_criteria: [clarity, reflection]
+  constraints: "None."
+  expected_response_characteristics: "1: She gave biscuits to her dog. 2: She fed biscuits made of dog meat (highly unlikely but grammatically valid)."
+  difficulty: high
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_13
+  module_id: h1
+  archetype_id: hacs-h1-register-shift
+  question_text: "Rewrite this text message for a formal business email: 'Hey, running late. Traffic is crazy. Start without me.'"
+  elicited_criteria: [consistency, stability]
+  constraints: "Maintain a professional tone."
+  expected_response_characteristics: "Example: 'Dear Team, I am running slightly behind schedule due to heavy traffic. Please proceed with the meeting in my absence.'"
+  difficulty: medium
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_14
+  module_id: h1
+  archetype_id: hacs-h1-register-shift
+  question_text: "Translate this medical jargon into plain English for a patient: 'You have a contusion on your tibia.'"
+  elicited_criteria: [consistency, stability]
+  constraints: "Make it reassuring."
+  expected_response_characteristics: "You have a bruise on your shinbone."
+  difficulty: low
+  language: en
+  version: HIB-1.0
+
+- question_id: h1_q_15
+  module_id: h1
+  archetype_id: hacs-h1-register-shift
+  question_text: "Explain the concept of 'inflation' to a 5-year-old."
+  elicited_criteria: [consistency, stability]
+  constraints: "Use an analogy involving toys or candy."
+  expected_response_characteristics: "Simple analogy: If everyone has more money, the store owner raises the price of candy, so you can't buy as much as before."
+  difficulty: high
+  language: en
+  version: HIB-1.0

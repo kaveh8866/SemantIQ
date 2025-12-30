@@ -1,0 +1,77 @@
+questions:
+  - question_id: awm_q_001
+    category_id: awm
+    archetype_id: awm-01-plan-generation
+    benchmark_type: lfg
+    prompt_intent: Plan a travel itinerary.
+    input: >
+      Create a 3-day itinerary for Tokyo for a family with young kids.
+    constraints:
+      - Must include kid-friendly spots (Disney, parks).
+      - Must be logistically feasible.
+    expected_response_characteristics:
+      - Logical flow, appropriate pacing.
+    difficulty: medium
+    language: en
+    version: "1.0"
+
+  - question_id: awm_q_002
+    category_id: awm
+    archetype_id: awm-01-plan-generation
+    benchmark_type: lfg
+    prompt_intent: Plan a software deployment.
+    input: >
+      Outline the steps to deploy a Python Flask app to AWS EC2 using Docker.
+    constraints:
+      - Include security group setup.
+      - Include Docker installation.
+    expected_response_characteristics:
+      - Correct technical order of operations.
+    difficulty: high
+    language: en
+    version: "1.0"
+
+  - question_id: awm_q_003
+    category_id: awm
+    archetype_id: awm-01-plan-generation
+    benchmark_type: lfg
+    prompt_intent: Plan a marketing launch.
+    input: >
+      Create a launch plan for a new coffee brand.
+    constraints:
+      - Include social media and offline events.
+    expected_response_characteristics:
+      - Phased approach (Teaser, Launch, Sustain).
+    difficulty: medium
+    language: en
+    version: "1.0"
+
+  - question_id: awm_q_004
+    category_id: awm
+    archetype_id: awm-01-plan-generation
+    benchmark_type: lfg
+    prompt_intent: Crisis management plan.
+    input: >
+      You are a PR manager. A video of your CEO shouting at a waiter went viral. Plan the response.
+    constraints:
+      - Apology, action, monitoring.
+    expected_response_characteristics:
+      - Damage control, sincerity, speed.
+    difficulty: high
+    language: en
+    version: "1.0"
+
+  - question_id: awm_q_005
+    category_id: awm
+    archetype_id: awm-01-plan-generation
+    benchmark_type: lfg
+    prompt_intent: Home renovation plan.
+    input: >
+      Steps to repaint a living room from scratch.
+    constraints:
+      - Include prep work (taping, priming).
+    expected_response_characteristics:
+      - Logical sequence (clean -> prep -> prime -> paint).
+    difficulty: low
+    language: en
+    version: "1.0"

@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-12-29T21:12:45.943634",
+  "versions": {
+    "code": "0.1.0",
+    "smf": "v1.0"
+  },
+  "files": {
+    "ratings_schema": {
+      "path": "datasets/hacs/ratings/schema.json",
+      "sha256": "1746fa90804a2a7cf5d172aa9d68fd17c59716f8ba5223cd11dc4aa081f4922f"
+    },
+    "protocol": {
+      "path": "docs/research/protocol_overview.md",
+      "sha256": "45dc43c89db80b7fa7f8e09399b781f9a207c15ee653cbd89a9ca1851e7414f8"
+    }
+  }
+}

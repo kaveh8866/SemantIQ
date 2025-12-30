@@ -1,7 +1,7 @@
-# SemantIQ-M-Benchmarks
+# SemantIQ
 
 ## Project Vision
-SemantIQ-M-Benchmarks is an open-source LLM Benchmark Framework designed to provide a modular, secure, and reproducible environment for evaluating Large Language Models. It aims to streamline the process of running benchmarks, analyzing results, and comparing model performance through a unified CLI and Web UI.
+SemantIQ is an open-source platform for semantic-cognitive benchmarking for Models (LLMs), Multi-Modal and Text-to-Image Models, and Human Levels. It is designed to provide a modular, secure, and reproducible environment for evaluating AI systems. It aims to streamline the process of running benchmarks, analyzing results, and comparing model performance through a unified CLI and Web UI.
 
 ## Components Overview
 - **CLI Tool**: A powerful command-line interface for managing benchmarks, datasets, and models.
@@ -19,8 +19,8 @@ SemantIQ-M-Benchmarks is an open-source LLM Benchmark Framework designed to prov
 ### Installation
 1.  **Clone the repository**:
     ```bash
-    git clone <repo-url>
-    cd SemantIQ-M-Benchmarks
+    git clone https://github.com/kaveh8866/SemantIQ.git
+    cd SemantIQ
     ```
 
 2.  **Backend Setup**:
@@ -42,7 +42,7 @@ SemantIQ-M-Benchmarks is an open-source LLM Benchmark Framework designed to prov
 
 4.  **Environment Configuration**:
     - Copy `.env.example` to `.env` and fill in your API keys.
-    - Copy `webapp/.env.local.example` to `webapp/.env.local` for frontend config.
 
 ### Running the Project
-*   (Instructions to be added as components are built)
+- **CLI**: `semantiq --help`
+- **Web UI**: `semantiq ui serve`

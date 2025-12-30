@@ -1,5 +1,6 @@
 typer
 pydantic
+pydantic-settings
 requests
 httpx
 rich
@@ -7,4 +8,6 @@ pandas
 numpy
 fastapi
 uvicorn
-pytest
+jinja2
+tenacity
+pyyaml

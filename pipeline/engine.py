@@ -9,7 +9,7 @@ from jinja2 import Template
 
 from benchmarks.schema import (
     BenchmarkSpec, 
-    TestCase, 
+    BenchmarkTestCase, 
     BenchmarkRunResult, 
     CaseResult, 
     BenchmarkCategory, 
@@ -68,11 +68,11 @@ class PipelineEngine:
         )
         return [spec]
 
-    def _load_dataset(self, dataset_path: str) -> List[TestCase]:
+    def _load_dataset(self, dataset_path: str) -> List[BenchmarkTestCase]:
         full_path = os.path.join(self.datasets_dir, dataset_path)
         with open(full_path, "r", encoding="utf-8") as f:
             data = json.load(f)
-        return [TestCase(**item) for item in data]
+        return [BenchmarkTestCase(**item) for item in data]
 
     def _load_prompt_template(self, template_path: str, template_name: str) -> str:
         full_path = os.path.join(self.prompts_dir, template_path, template_name)

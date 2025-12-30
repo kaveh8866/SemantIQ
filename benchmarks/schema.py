@@ -35,7 +35,7 @@ class BenchmarkSpec(BaseModel):
     scoring: ScoringConfig
     output_artifact_format: str = Field("json", description="Format of the result file")
 
-class TestCase(BaseModel):
+class BenchmarkTestCase(BaseModel):
     """
     Represents a single test case from a dataset.
     """

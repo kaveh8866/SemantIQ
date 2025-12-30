@@ -1,5 +1,5 @@
 import pytest
-from benchmarks.schema import BenchmarkSpec, BenchmarkCategory, ScoringConfig, TestCase, ScoreResult
+from benchmarks.schema import BenchmarkSpec, BenchmarkCategory, ScoringConfig, BenchmarkTestCase, ScoreResult
 
 def test_benchmark_spec_validation():
     # Valid spec
@@ -29,7 +29,7 @@ def test_benchmark_spec_validation():
         )
 
 def test_test_case_validation():
-    case = TestCase(
+    case = BenchmarkTestCase(
         case_id="case_001",
         input="Write a function",
         expected="def func():"

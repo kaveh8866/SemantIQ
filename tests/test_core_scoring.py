@@ -1,10 +1,10 @@
 import pytest
-from benchmarks.schema import TestCase, ScoreResult
+from benchmarks.schema import BenchmarkTestCase, ScoreResult
 from benchmarks.scoring import ScorerFactory, ExactMatchScorer, HeuristicScorer
 
 def test_exact_match_scorer():
     scorer = ScorerFactory.get_scorer("exact_match")
-    case = TestCase(case_id="1", input="in", expected="out")
+    case = BenchmarkTestCase(case_id="1", input="in", expected="out")
     
     # Match
     result = scorer.score(case, "out")
@@ -22,7 +22,7 @@ def test_exact_match_scorer():
 
 def test_heuristic_scorer():
     scorer = ScorerFactory.get_scorer("heuristic")
-    case = TestCase(case_id="1", input="in", expected="def foo():")
+    case = BenchmarkTestCase(case_id="1", input="in", expected="def foo():")
     
     # Perfect match (contains expected + not empty)
     result = scorer.score(case, "Sure, here is the code:\ndef foo():\n    pass")

@@ -1,17 +1,17 @@
 from abc import ABC, abstractmethod
 from typing import Any, Dict, List, Optional
-from .schema import ScoreResult, TestCase
+from .schema import ScoreResult, BenchmarkTestCase
 
 class BaseScorer(ABC):
     @abstractmethod
-    def score(self, case: TestCase, model_output: str) -> ScoreResult:
+    def score(self, case: BenchmarkTestCase, model_output: str) -> ScoreResult:
         """
         Evaluate the model output against the test case.
         """
         pass
 
 class ExactMatchScorer(BaseScorer):
-    def score(self, case: TestCase, model_output: str) -> ScoreResult:
+    def score(self, case: BenchmarkTestCase, model_output: str) -> ScoreResult:
         expected = case.expected
         if not expected:
             return ScoreResult(score=0.0, metrics={"exact_match": False}, details="No expected output provided")
@@ -37,7 +37,7 @@ class HeuristicScorer(BaseScorer):
     A deterministic heuristic scorer for code generation.
     Checks for basic properties like non-emptiness, presence of expected tokens (if simple), etc.
     """
-    def score(self, case: TestCase, model_output: str) -> ScoreResult:
+    def score(self, case: BenchmarkTestCase, model_output: str) -> ScoreResult:
         metrics = {}
         score = 0.0
         details = []

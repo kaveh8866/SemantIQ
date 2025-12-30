@@ -1,0 +1,29 @@
+{
+  "title": "SemantIQ-M-Benchmarks: A Unified Framework for Multimodal AI Evaluation",
+  "description": "SemantIQ-M-Benchmarks is an open-source framework for evaluating Large Language Models (LLMs) and Multimodal Models. It includes the Semantic Maturity Framework (SMF), Human-AI Cognitive Symmetry (HACS) protocols, and Vision benchmarking tools. This repository provides the CLI, Web UI, and standard datasets for reproducible evaluation.",
+  "creators": [
+    {
+      "name": "SemantIQ Research Team",
+      "affiliation": "SemantIQ"
+    }
+  ],
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "keywords": [
+    "AI",
+    "Benchmark",
+    "LLM",
+    "Multimodal",
+    "Evaluation",
+    "Reproducibility",
+    "SMF",
+    "HACS"
+  ],
+  "upload_type": "software",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/kaveh8866/SemantIQ"
+    }
+  ]
+}

@@ -10,6 +10,7 @@ from cli.hacs_commands import app as hacs_app
 from cli.vision_commands import app as vision_app
 from cli.ui_commands import app as ui_app
 from cli.research_commands import app as research_app
+from cli.ops_commands import app as ops_app
 
 app = typer.Typer(
     name="semantiq",
@@ -23,6 +24,7 @@ app.add_typer(hacs_app, name="hacs")
 app.add_typer(vision_app, name="vision")
 app.add_typer(ui_app, name="ui")
 app.add_typer(research_app, name="research")
+app.add_typer(ops_app, name="ops")
 
 console = Console()
 # Initialize pipeline with the current working directory as base

@@ -1,0 +1,21 @@
+name: Methodology Question
+description: Ask about the statistical or scientific reasoning behind a metric.
+title: "[Methodology]: <Question>"
+labels: ["methodology-question"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to discuss *why* we measure things the way we do (e.g., "Why use ICC(2,k)?").
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: Please be specific about the metric or protocol.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context / Alternative
+      description: Do you have a suggestion for a better method?

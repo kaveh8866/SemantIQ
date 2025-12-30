@@ -1,24 +1,18 @@
 cff-version: 1.2.0
 message: "If you use this software or benchmark, please cite it as below."
 authors:
-  - family-names: "Doe"
-    given-names: "Jane"
-    affiliation: "SemantIQ Research"
-  - family-names: "Smith"
-    given-names: "John"
-    affiliation: "SemantIQ Research"
+  - name: "SemantIQ Research Team"
+    affiliation: "SemantIQ"
 title: "SemantIQ-M-Benchmarks: A Unified Framework for Multimodal AI Evaluation"
 version: 0.1.0
-date-released: 2023-10-27
-url: "https://github.com/your-org/semantiq-m-benchmarks"
+date-released: 2025-01-01
+url: "https://github.com/kaveh8866/SemantIQ"
 license: Apache-2.0
 preferred-citation:
-  type: generic
+  type: software
   authors:
-    - family-names: "Doe"
-      given-names: "Jane"
-    - family-names: "Smith"
-      given-names: "John"
+    - name: "SemantIQ Research Team"
+      affiliation: "SemantIQ"
   title: "SemantIQ-M-Benchmarks: A Unified Framework for Multimodal AI Evaluation"
-  year: 2023
-  url: "https://github.com/your-org/semantiq-m-benchmarks"
+  year: 2025
+  url: "https://github.com/kaveh8866/SemantIQ"

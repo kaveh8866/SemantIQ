@@ -1,42 +1,36 @@
-# Project Governance
+# Governance & Team Structure
 
-## 1. Mission & Scope
-The mission of **SemantIQ-M-Benchmarks** is to provide a unified, transparent, and reproducible framework for evaluating multimodal AI systems. We focus on:
-- **Semantic Maturity Framework (SMF)**: Evaluating semantic capabilities of LLMs.
-- **Human-AI Comparative Score (HACS)**: Assessing human-AI collaboration quality.
-- **SemantIQ-Vision (T2I)**: Measuring semantic correctness in Text-to-Image generation.
+This project follows a formal governance model to ensure the scientific integrity of its benchmarks. Detailed role descriptions can be found in [Roles & Responsibilities](docs/ops/roles_and_responsibilities.md).
 
-Our goal is to foster open research, standardized evaluation, and ethical AI development.
+## Current Maintainers (v1.0 Launch Team)
 
-## 2. Roles & Responsibilities
+| Role | Responsibility | Current Assignee |
+| :--- | :--- | :--- |
+| **Project Lead** | Overall direction, release engineering, security. | @kaveh8866 |
+| **SMF Steward** | Semantic maturity, logic puzzles, reasoning depth. | *Interim: @kaveh8866* (Open for nominations) |
+| **HACS Steward** | Human-AI alignment, rater reliability protocols. | *Interim: @kaveh8866* (Open for nominations) |
+| **Vision Steward** | Multimodal consistency, image generation metrics. | *Interim: @kaveh8866* (Open for nominations) |
+| **Community Mod** | Triage, Code of Conduct enforcement. | *Open* |
 
-### Core Maintainers
-Core Maintainers have administrative access to the repository and are responsible for the overall direction, release management, and final approval of significant changes.
-- **Responsibilities**: Project roadmap, release tagging, security handling, conflict resolution.
-- **Decision Power**: Consensus-seeking; in deadlocks, the Project Lead has the casting vote.
+## Decision Making Process
 
-### Benchmark Editors
-Experts in specific domains (Text, Vision, Human-AI) who curate and validate benchmark datasets.
-- **Responsibilities**: Reviewing new prompts/datasets, ensuring benchmark integrity, maintaining domain-specific documentation.
-- **Scope**: Can merge changes within their specific benchmark directories (e.g., `datasets/vision/`).
+1.  **Consensus Seeking**: We aim for consensus on all major changes.
+2.  **Steward Veto**: The Steward for a specific domain (e.g., Vision) has veto power over changes to that benchmark's methodology or dataset content.
+3.  **Tie-Breaking**: The Project Lead has the final tie-breaking vote if consensus cannot be reached.
 
-### Reviewers
-Community members who actively review pull requests and issues.
-- **Responsibilities**: Code review, reproducing benchmark runs, improving documentation.
+## Becoming a Maintainer
 
-## 3. Decision-Making Process
-We operate on a **consensus-first** model.
-1. **Proposal**: Significant changes (new benchmarks, API breaking changes) must start as an Issue or RFC (Request for Comments).
-2. **Discussion**: Open discussion on GitHub.
-3. **Consensus**: Maintainers aim for unanimous agreement.
-4. **Escalation**: If no consensus is reached after reasonable debate, a vote among Core Maintainers is held.
+We actively seek researchers and developers to take over Steward roles.
+**Path to Stewardship**:
+1.  Contribute consistently to a specific domain (e.g., submit 3 accepted PRs to SMF).
+2.  Demonstrate deep understanding of the methodology (e.g., participate in a methodology review).
+3.  Be nominated by an existing maintainer.
 
-## 4. Benchmark Management
-Managing benchmarks is distinct from managing code.
-- **Proposal**: New benchmarks are submitted via PR with a `rationale` and `validation report`.
-- **Review**: Requires approval from at least one **Core Maintainer** AND one **Benchmark Editor**.
-- **Deprecation**: Benchmarks that are "solved" (saturated) or found to be flawed are moved to `deprecated/` but never deleted to ensure reproducibility of historical results.
-- **Protection**: Direct modification of existing prompt IDs (semantic change) is strictly forbidden. Fixes require a new version (e.g., `v1.1`).
+## Meetings & Reviews
 
-## 5. Contact
-For governance queries, contact the Core Maintainers via GitHub Issues.
+- **Quarterly Health Check**: Scheduled for April, July, October, January (Automated via GitHub Actions).
+- **Ad-hoc Methodology Reviews**: Triggered by `benchmark-integrity` issues.
+
+## Code of Conduct
+
+All contributors and maintainers must adhere to the [Code of Conduct](CODE_OF_CONDUCT.md).

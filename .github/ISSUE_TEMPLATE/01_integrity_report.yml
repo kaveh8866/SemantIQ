@@ -1,0 +1,41 @@
+name: Benchmark Integrity Report
+description: Report a flaw, bias, or contamination in a benchmark dataset.
+title: "[Integrity]: <Short Description>"
+labels: ["benchmark-integrity", "critical"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form if you believe a benchmark (SMF, HACS, Vision) is measuring the wrong thing, is biased, or has been contaminated (memorized by models).
+  - type: dropdown
+    id: domain
+    attributes:
+      label: Affected Domain
+      options:
+        - SMF (Semantic Maturity)
+        - HACS (Human-AI Consistency)
+        - Vision (Multimodal)
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description of the Flaw
+      description: Why is this benchmark invalid?
+      placeholder: "Example: The prompt 'X' in category 'Logic' has two valid answers..."
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence / Proof
+      description: Please provide data, screenshots, or statistical analysis.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Affected Version
+      placeholder: v1.0.0
+    validations:
+      required: true

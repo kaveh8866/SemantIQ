@@ -1,0 +1,24 @@
+name: Bug Report (Code)
+description: Report a software bug in the CLI, Pipeline, or UI.
+title: "[Bug]: <Short Description>"
+labels: ["bug", "scoring-regression"]
+body:
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        1. Run `python cli/main.py run ...`
+        2. See error...
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Output
+      render: shell
+  - type: input
+    id: os
+    attributes:
+      label: OS / Environment
+      placeholder: Windows 11, Python 3.11

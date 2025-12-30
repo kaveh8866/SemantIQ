@@ -1,0 +1,25 @@
+name: Ethical Concern
+description: Report harmful content, hate speech generation, or misuse.
+title: "[Ethics]: <Short Description>"
+labels: ["ethical-concern", "critical"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Warning**: If this is a severe safety incident (e.g., generation of illegal content), please email the security contact in SECURITY.md immediately instead of posting publicly.
+  - type: textarea
+    id: concern
+    attributes:
+      label: Concern Description
+      description: What happened?
+    validations:
+      required: true
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: Potential Impact
+      options:
+        - Harmful Content Generation
+        - Bias / Discrimination
+        - PII Leakage
+        - Misinformation

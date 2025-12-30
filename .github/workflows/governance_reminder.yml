@@ -1,0 +1,48 @@
+name: Governance Reminder
+
+on:
+  schedule:
+    # Run at 09:00 UTC on the 1st of January, April, July, and October
+    - cron: '0 9 1 1,4,7,10 *'
+  workflow_dispatch: # Allow manual trigger for testing
+
+permissions:
+  issues: write
+
+jobs:
+  create-review-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Create Quarterly Review Issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const date = new Date().toISOString().split('T')[0];
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `📅 Quarterly Governance & Health Review - ${date}`,
+              labels: ['governance', 'maintenance'],
+              body: `
+              # Quarterly Governance & Health Check
+              
+              This is an automated reminder for the Maintainers and Stewards to perform the quarterly review as defined in [review_cadence.md](../docs/ops/review_cadence.md).
+              
+              ## Agenda
+              
+              1.  **Issue Triage**: Review all open \`methodology-question\` and \`benchmark-integrity\` issues.
+              2.  **Health Check**: Run \`python -m cli.main ops health\` and analyze saturation.
+              3.  **Adoption Check**: Run \`python -m cli.main ops adoption-summary\`.
+              4.  **Steward Rotation**: Confirm Steward availability for the next quarter.
+              
+              ## Action Items
+              
+              - [ ] Check score saturation (is SMF >90%?).
+              - [ ] Review citation metrics.
+              - [ ] Plan next minor release.
+              
+              cc @kaveh8866
+              `
+            });
